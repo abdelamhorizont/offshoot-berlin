@@ -17,7 +17,7 @@ module.exports = {
       options: {
         type: {
           // url: process.env.WPGRAPHQL_URL,
-          url: "http://wordpress.meltonpriorinstitut.org/graphql",
+          WPGRAPHQL_URL="http://wordpress.meltonpriorinstitut.org/graphql",
           MediaItem: {
             localFile: {
               requestConcurrency: 50

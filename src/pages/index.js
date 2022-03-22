@@ -7,7 +7,7 @@ const Homepage = () => {
 
   return (
     <div>
-      hellowww
+      les gooo!
     </div>
   )
 }
