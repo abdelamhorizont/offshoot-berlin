@@ -1,14 +1,13 @@
 import * as React from "react"
-// import { graphql } from "gatsby"
-// import Layout from "../components/layout"
-// import * as sections from "../components/sections"
+import { Link, useStaticQuery, graphql } from 'gatsby'
+
+import Layout from '../components/layout/layout'
 
 const Homepage = () => {
 
   return (
-    <div>
-      les gooo!
-    </div>
+    <Layout pageTitle="Home Page">
+    </Layout>
   )
 }
 
