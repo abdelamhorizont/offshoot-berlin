@@ -2,17 +2,16 @@ import * as React from "react"
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../../components/layout/layout'
+import ArticleTitle from '../../components/articleTitle/articleTitle'
 
 export default function Post({ data }) {
 
   return (
     <Layout>
-      <p>{data.wpPost.author.node.name}</p>
-      <p>{data.wpPost.date}</p>
-      <h1>{data.wpPost.title}</h1>
+
+      <ArticleTitle path={data.wpPost} />
       <div dangerouslySetInnerHTML={{ __html: data.wpPost.content }} />
 
-      {/* <p>{data.wpPost.content}</p> */}
     </Layout>
   )
 }
@@ -21,6 +20,11 @@ export const query = graphql`
 query ($id: String) {
   wpPost(id: {eq: $id}) {
     id
+    categories {
+      nodes {
+        name 
+      }
+    }
     title
     content
     date(formatString: "MMMM D, YYYY")

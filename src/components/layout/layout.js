@@ -25,8 +25,8 @@ const Layout = ({ children }) => {
             <header>
                 <nav>
                     <div>
-                    <Link to="/"> Melton Prior Institute</Link>
-                       
+                        <Link to="/"> Melton Prior Institute</Link>
+
                     </div>
                     <ul>
                         <li><Link to="/meta/about">About</Link></li>
@@ -41,8 +41,9 @@ const Layout = ({ children }) => {
                         <li><Link to="/content/pictorials">Pictorials</Link></li>
                         <li><Link to="/content/collections">Collections</Link></li>
                         <div>
-                            search
+                            search [
                         <input type="text" />
+                            ]
                         </div>
                     </ul>
                 </nav>

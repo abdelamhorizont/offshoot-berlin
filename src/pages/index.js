@@ -7,6 +7,33 @@ import ArticleTitle from '../components/articleTitle/articleTitle'
 import ArticleBody from '../components/articleBody/articleBody'
 
 const Homepage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allWpPost(
+        filter: {categories: {nodes: {elemMatch: {name: {eq: "features"}}}}}
+        limit: 3
+      ) {        
+        edges {
+          node {
+            id
+            categories {
+              nodes {
+                name 
+              }
+            }
+            title
+            date(formatString: "MMMM D, YYYY")
+            author {
+              node {
+                name
+              }
+            }
+            uri
+          }
+        }
+      }
+    }
+    `)
 
   return (
     <Layout>
@@ -18,6 +45,27 @@ const Homepage = () => {
       <Section title="News">
         <ArticleTitle />
         <ArticleBody />
+      </Section>
+
+      <Section title="Showcase">
+        <ArticleTitle />
+        <ArticleBody />
+      </Section>
+
+      <Section title="features">
+      <ul>
+        {
+          data.allWpPost.edges.map(edge => (
+
+            <Link to={`/content${edge.node.uri}`}>
+              <li >                
+                <ArticleTitle path={edge.node} />
+              </li>
+            </Link>
+
+          ))
+        }
+      </ul>
       </Section>
 
     </Layout>

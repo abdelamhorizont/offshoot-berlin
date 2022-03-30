@@ -7,24 +7,23 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 // } from './vorlage.module.scss'
 
 
-const ArticleTitle = () => {
-    // const data = useStaticQuery(graphql`
-    // query {
-    //     site {
-    //       siteMetadata {
-    //         title
-    //       }
-    //     }
-    //   }
-    // `)
+const ArticleTitle = (props) => {
 
-    return (
-        <div>
-            <p>Author</p>
-            <p>Date</p>
-            <h1>Article Title</h1>
+    if (props.path) {
+        return (
+            <div>
+            <p>{props.path.categories.nodes[0].name}</p>
+            <p>{props.path.author.node.name}</p>
+            <p>{props.path.date}</p>
+            <h1>{props.path.title}</h1>
         </div>
-    )
+        )
+    } else {
+        return (
+            null
+        )
+    }
+
 }
 
 export default ArticleTitle

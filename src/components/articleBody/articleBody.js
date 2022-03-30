@@ -8,15 +8,6 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 
 
 const ArticleBody = () => {
-    // const data = useStaticQuery(graphql`
-    // query {
-    //     site {
-    //       siteMetadata {
-    //         title
-    //       }
-    //     }
-    //   }
-    // `)
 
     return (
         <div>

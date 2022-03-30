@@ -13,16 +13,16 @@ export default function Features() {
         edges {
           node {
             id
+            categories {
+              nodes {
+                name 
+              }
+            }
             title
             date(formatString: "MMMM D, YYYY")
             author {
               node {
                 name
-              }
-            }
-            categories {
-              nodes {
-                name 
               }
             }
             excerpt
@@ -40,11 +40,8 @@ export default function Features() {
           data.allWpPost.edges.map(edge => (
 
             <Link to={`/content${edge.node.uri}`}>
-              <li key={edge.node.id}>
-                <p>{edge.node.author.node.name}</p>
-                <p>{edge.node.date}</p>
-                <p>{edge.node.categories.nodes[0].name}</p>
-                <h1>{edge.node.title}</h1>
+              <li key={edge.node.id}>                
+                <ArticleTitle path={edge.node} />
                 <p dangerouslySetInnerHTML={{ __html: edge.node.excerpt }} />
               </li>
             </Link>
@@ -52,8 +49,6 @@ export default function Features() {
           ))
         }
       </ul>
-
-      {/* <ArticleTitle /> */}
 
     </Layout>
   )
