@@ -6,7 +6,7 @@ exports.components = {
   "component---src-pages-contact-js": () => import("./../../../src/pages/contact.js" /* webpackChunkName: "component---src-pages-contact-js" */),
   "component---src-pages-imprint-js": () => import("./../../../src/pages/imprint.js" /* webpackChunkName: "component---src-pages-imprint-js" */),
   "component---src-pages-index-js": () => import("./../../../src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
-  "component---src-pages-work-js": () => import("./../../../src/pages/work.js" /* webpackChunkName: "component---src-pages-work-js" */),
+  "component---src-pages-work-all-js": () => import("./../../../src/pages/workAll.js" /* webpackChunkName: "component---src-pages-work-all-js" */),
   "component---src-pages-wp-posturi-js": () => import("./../../../src/pages/wpPosturi.js" /* webpackChunkName: "component---src-pages-wp-posturi-js" */)
 }
 

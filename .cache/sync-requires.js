@@ -11,7 +11,7 @@ exports.components = {
   "component---src-pages-contact-js": preferDefault(require("/Users/abdelammeer/Creative Cloud Files/offshoot-berlin/offshoot-berlin/src/pages/contact.js")),
   "component---src-pages-imprint-js": preferDefault(require("/Users/abdelammeer/Creative Cloud Files/offshoot-berlin/offshoot-berlin/src/pages/imprint.js")),
   "component---src-pages-index-js": preferDefault(require("/Users/abdelammeer/Creative Cloud Files/offshoot-berlin/offshoot-berlin/src/pages/index.js")),
-  "component---src-pages-work-js": preferDefault(require("/Users/abdelammeer/Creative Cloud Files/offshoot-berlin/offshoot-berlin/src/pages/work.js")),
+  "component---src-pages-work-all-js": preferDefault(require("/Users/abdelammeer/Creative Cloud Files/offshoot-berlin/offshoot-berlin/src/pages/workAll.js")),
   "component---src-pages-wp-posturi-js": preferDefault(require("/Users/abdelammeer/Creative Cloud Files/offshoot-berlin/offshoot-berlin/src/pages/wpPosturi.js"))
 }
 
