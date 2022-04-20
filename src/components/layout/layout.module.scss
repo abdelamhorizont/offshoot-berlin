@@ -1,0 +1,36 @@
+nav,
+footer {
+    max-height: max-content;
+
+    ul {
+        display         : inline-flex;
+        justify-content : space-between;
+        position        : fixed;
+        background-color: black;
+
+        width : calc(100vw - 2rem);
+        padding: 1rem;
+
+        li {
+            display: inline;    
+            font-size: 11pt;
+            line-height: 0rem;
+        }
+
+        video{
+            height: 1.5rem;
+            margin-top: -0.5rem;
+        }
+    }
+
+    ul.top {
+        top: 0rem;
+        padding-bottom: 0.5rem;
+    }
+
+    ul.bottom {
+        bottom: 0rem;
+        padding-top: 0.8rem;
+
+    }
+}

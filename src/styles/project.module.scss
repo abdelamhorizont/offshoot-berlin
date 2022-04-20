@@ -1,0 +1,27 @@
+.project{
+    margin: 1rem;
+    margin-top: 3.5vh;
+
+    iframe{
+        margin: 1vh 0vw;
+
+        width   : calc(100vw - 2rem);
+        height: 88vh;
+    }
+
+    .text{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-size: 18pt;
+
+        table{
+          td{
+              *{
+                //   margin-left: 3rem;
+                //   background-color: aliceblue;
+              }
+          }
+        }
+    }
+
+}

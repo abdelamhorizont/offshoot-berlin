@@ -1,0 +1,64 @@
+.work-title{
+    display: inline;
+    justify-content: space-between;
+
+    width: 100%;
+    font-size: 18pt;
+
+    *{
+        margin: 0rem 0.2rem;
+        transition: margin 0.5s ease, font-style 0.5s ease;
+    }
+
+    &:hover{
+
+        *{
+            font-style: italic;
+        }
+
+        h1{
+            margin-left: 5rem;
+        }
+    }
+}
+
+@function randomNum($min, $max) {
+    $rand: random();
+    $randomNum: $min + floor($rand * (($max - $min) + 1));
+  
+    @return $randomNum;
+  }
+  
+
+@media screen and (min-width: 620px) {
+    .work-title{
+        display: inline-flex;
+        justify-content: space-between;
+    
+        width: 100%;
+        font-size: 18pt;
+
+        *{
+            display: flex;
+            flex: 1;
+        }
+
+        h3{
+            justify-content:end;
+        }
+
+        h1{
+            // display: flex;
+            justify-content: center;
+        }
+    
+    }
+}
+
+@media screen and (min-width: 960px) {
+
+}
+
+@media screen and (min-width: 2000px) {
+
+}
