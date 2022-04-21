@@ -1,24 +1,24 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
-import { top, bottom, logo} from './layout.module.scss'
+import { top, bottom, logo, ulWrapper } from './layout.module.scss'
 
 import logoFile from '../../assets/logo rot.mp4'
 
 const Layout = ({ children }) => {
-    const data = useStaticQuery(graphql`
-    query {
-        allContentfulAsset(filter: {title: {eq: "logo"}}) {
-              nodes {
-                title
-                file {
-                  url
-                }
-                url
-              }
-          }
-      }
-    `)
+    // const data = useStaticQuery(graphql`
+    // query {
+    //     allContentfulAsset(filter: {title: {eq: "logo"}}) {
+    //           nodes {
+    //             title
+    //             file {
+    //               url
+    //             }
+    //             url
+    //           }
+    //       }
+    //   }
+    // `)
 
     // const logo = data.allContentfulAsset.nodes.url
 
@@ -26,16 +26,18 @@ const Layout = ({ children }) => {
         <div>
             <header>
                 <nav>
-                    <ul className={top}>
-                        <li><Link to="/work">Work</Link></li>
-                        {/* <li><Link to="/"> offshoot*berlin</Link></li> */}
-                        <li><Link to="/">
-                            <video id={logo} muted autoPlay loop>
-                                <source src={logoFile} type="video/mp4" />
-                            </video>
-                        </Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
-                    </ul>
+                    <div className={ulWrapper}>
+                        <ul className={top}>
+                            <li><Link to="/work">Work</Link></li>
+                            {/* <li><Link to="/"> offshoot*berlin</Link></li> */}
+                            <li className={logo}><Link to="/">
+                                <video muted autoPlay loop>
+                                    <source src={logoFile} type="video/mp4" />
+                                </video>
+                            </Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
+                        </ul>
+                    </div>
                 </nav>
             </header>
 

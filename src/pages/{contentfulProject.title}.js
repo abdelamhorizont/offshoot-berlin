@@ -3,7 +3,8 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout/layout'
 import WorkTitle from '../components/workTitle/workTitle'
-import Work from '../components/work/work'
+// import Work from '../components/work/work'
+import ProjectList from '../components/projectList/projectList'
 
 import { project, text } from '../styles/project.module.scss'
 
@@ -22,14 +23,6 @@ function videoUrl(url) {
   }
 }
 
-function randomNumber(min, max) { // min and max included
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-const randomMargin = {
-  marginLeft: randomNumber(0, 15) + "vw"
-}
-
 const Post = ({ data }) => {
 
   const videoSrc = videoUrl(data.contentfulProject.videoUrl)
@@ -41,9 +34,9 @@ const Post = ({ data }) => {
 
         <iframe
           src={videoSrc}
+          title="project"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          // sandbox=""
           allowfullscreen>
         </iframe>
 
@@ -52,7 +45,8 @@ const Post = ({ data }) => {
           <div dangerouslySetInnerHTML={{ __html: data.contentfulProject.text && data.contentfulProject.text.childMarkdownRemark.html }} />
         </div>
       </div>
-        <Work />
+        {/* <Work /> */}
+        <ProjectList />
     </Layout>
   )
 }

@@ -1,9 +1,11 @@
+@import "../../styles/typo.module.scss";
+
 .work-title{
     display: inline;
     justify-content: space-between;
 
     width: 100%;
-    font-size: 18pt;
+    font-size: $fontSize2000M;
 
     *{
         margin: 0rem 0.2rem;
@@ -14,10 +16,6 @@
 
         *{
             font-style: italic;
-        }
-
-        h1{
-            margin-left: 5rem;
         }
     }
 }
@@ -36,7 +34,7 @@
         justify-content: space-between;
     
         width: 100%;
-        font-size: 18pt;
+        font-size: $fontSize960M;
 
         *{
             display: flex;
@@ -60,5 +58,7 @@
 }
 
 @media screen and (min-width: 2000px) {
-
+    .work-title{
+        font-size: $fontSize2000M;
+    }
 }

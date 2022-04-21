@@ -1,6 +1,20 @@
+@import "../../styles/typo.module.scss";
+
 nav,
 footer {
-    max-height: max-content;
+    // max-height: max-content;
+    // width  : calc(100vw - 2rem);
+
+    .ul-wrapper {
+        height    : 3.5vh;
+        overflow  : auto;
+        display   : block;
+        transition: height 0.5s ease;
+
+        &:hover {
+            height: 4vh;
+        }
+    }
 
     ul {
         display         : inline-flex;
@@ -8,29 +22,121 @@ footer {
         position        : fixed;
         background-color: black;
 
-        width : calc(100vw - 2rem);
-        padding: 1rem;
+        width  : calc(100vw - 3rem);
+        padding: 1.5rem;
 
         li {
-            display: inline;    
-            font-size: 11pt;
+            display: flex;
+            flex   : 1;
+
+            font-size  : $fontSize2000S;
             line-height: 0rem;
+            transition : margin 0.5s ease;
+
         }
 
-        video{
-            height: 1.5rem;
+        li:last-child {
+            justify-content: end;
+        }
+
+        li:not(:first-child, :last-child) {
+            justify-content: center;
+        }
+
+        &:hover {
+            li:not(.logo) {
+                margin: 0.5rem 0rem;
+            }
+        }
+
+        .logo {
             margin-top: -0.5rem;
+
+            video {
+                height    : 1.5rem;
+                transition: height 0.5s ease;
+            }
+
+            &:hover {
+                video {
+                    height: 2rem;
+                }
+            }
         }
     }
 
     ul.top {
-        top: 0rem;
+        top           : 0rem;
         padding-bottom: 0.5rem;
     }
 
     ul.bottom {
-        bottom: 0rem;
+        bottom     : 0rem;
         padding-top: 0.8rem;
 
     }
+}
+
+@media screen and (min-width: 620px) {
+    nav,
+    footer {
+        ul{          
+            li {
+                font-size: $fontSize960S;
+            }
+
+            .logo {    
+                video {
+                    height    : 1.3rem;
+                }    
+                &:hover {
+                    video {
+                        height: 1.7rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 960px) {
+
+}
+
+@media screen and (min-width: 2000px) {
+    nav,
+    footer {
+        ul{          
+            li {
+                font-size: $fontSize2000S;
+            }
+
+            .logo {
+                margin-top: -0.5rem;
+    
+                video {
+                    height    : 1.5rem;
+                    transition: height 0.5s ease;
+                }
+    
+                &:hover {
+                    video {
+                        height: 2rem;
+                    }
+                }
+            }
+        }
+        
+        ul.top {
+            top           : 0rem;
+            padding-bottom: 0.5rem;
+        }
+    
+        ul.bottom {
+            bottom     : 0rem;
+            padding-top: 0.8rem;
+    
+        }
+    }
+
 }

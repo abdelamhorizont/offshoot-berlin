@@ -27,9 +27,9 @@ export default function WorkTitle(props) {
 
     return (
         <div className={workTitle}>
-            <h2 style={ props.marg  === true ? { marginLeft: randomNumber(0, 15) + "vw" } : {marginLeft: 3 + "vw"}}>{props.path.client}</h2>
+            <h2 style={ props.marg  === true ? { marginLeft: randomNumber(0, 15) + "vw" } : {marginLeft: 2 + "vw"}}>{props.path.client}</h2>
             <h1>{props.path.title}</h1>
-            <h3 style={ props.marg  === true ? { marginRight: randomNumber(0, 15) + "vw" } : {marginRight: 3 + "vw"}}>{props.path.year}</h3>
+            <h3 style={ props.marg  === true ? { marginRight: randomNumber(0, 15) + "vw" } : {marginRight: 2 + "vw"}}>{props.path.year}</h3>
         </div>
     )
 }

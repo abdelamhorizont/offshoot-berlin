@@ -1,9 +1,11 @@
 $myColor1: whitesmoke;
 $myColor2: rgb(162, 162, 162);
 
-$fontSize: 1rem;
-$fontSizeM: 1.5rem;
-$fontSizeL: 2.5rem;
+$fontSize2000S: 13pt;
+$fontSize2000M: 20pt;
+
+$fontSize960S: 10pt;
+$fontSize960M: 16pt;
 
 h1, h2, h3, p, li, ul, a, tr{
     font-family: 'PPNeueMontreal';
@@ -18,9 +20,9 @@ h1, h2, h3, p, li, ul, a, tr{
 }
 
 @media screen and (min-width: 960px) {
-
+ 
 }
 
 @media screen and (min-width: 2000px) {
-  $fontSize: 1.5rem;
+
 }

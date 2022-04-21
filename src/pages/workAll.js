@@ -3,7 +3,7 @@ import * as React from "react"
 
 import Layout from '../components/layout/layout'
 
-export default function Work() {
+export default function WorkAll() {
   // const data = useStaticQuery(graphql`
   //   query {
   //     allWpPost {
