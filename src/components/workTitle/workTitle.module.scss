@@ -5,7 +5,7 @@
     justify-content: space-between;
 
     width: 100%;
-    font-size: $fontSize2000M;
+    font-size: $fontSizeM;
 
     *{
         margin: 0rem 0.2rem;
@@ -20,12 +20,12 @@
     }
 }
 
-@function randomNum($min, $max) {
-    $rand: random();
-    $randomNum: $min + floor($rand * (($max - $min) + 1));
+// @function randomNum($min, $max) {
+//     $rand: random();
+//     $randomNum: $min + floor($rand * (($max - $min) + 1));
   
-    @return $randomNum;
-  }
+//     @return $randomNum;
+//   }
   
 
 @media screen and (min-width: 620px) {
@@ -35,7 +35,8 @@
     
         width: 100%;
         font-size: $fontSize960M;
-
+        transition: font-size 0.5s ease;
+        
         *{
             display: flex;
             flex: 1;
@@ -53,8 +54,10 @@
     }
 }
 
-@media screen and (min-width: 960px) {
-
+@media screen and (min-width: 1400px) {
+    .work-title{
+        font-size: $fontSize1400M;
+    }
 }
 
 @media screen and (min-width: 2000px) {

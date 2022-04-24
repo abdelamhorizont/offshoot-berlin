@@ -6,7 +6,7 @@ footer {
     // width  : calc(100vw - 2rem);
 
     .ul-wrapper {
-        height    : 3.5vh;
+        height    : 3.5rem;
         overflow  : auto;
         display   : block;
         transition: height 0.5s ease;
@@ -29,7 +29,7 @@ footer {
             display: flex;
             flex   : 1;
 
-            font-size  : $fontSize2000S;
+            font-size  : $fontSizeS;
             line-height: 0rem;
             transition : margin 0.5s ease;
 
@@ -77,21 +77,63 @@ footer {
     }
 }
 
-@media screen and (min-width: 620px) {
+@media screen and (max-width: 620px) {
+
     nav,
     footer {
-        ul{          
+
+        ul{
+            justify-content: space-around;
+        }
+
+        ul.top {
+            top              : 90vh;
+        }
+
+        .logo {
+            position        : fixed;
+            background-color: black;
+            top             : 0rem;
+            left: 0rem;
+
+            width   : 100vw;
+            padding: 1.5rem 0rem;
+            overflow: hidden;
+            display : flex;
+            justify-content: center;
+
+            video {
+                // height: 3rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 620px) {
+
+    nav,
+    footer {
+        .ul-wrapper {
+            height: 2.7rem;
+
+            &:hover {
+                height: 7.5vh;
+            }
+        }
+
+        ul {
             li {
                 font-size: $fontSize960S;
             }
 
-            .logo {    
+            .logo {
                 video {
-                    height    : 1.3rem;
-                }    
+                    height: 1.2rem;
+                }
+
                 &:hover {
                     video {
-                        height: 1.7rem;
+                        height: 1.5rem;
                     }
                 }
             }
@@ -99,43 +141,81 @@ footer {
     }
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1400px) {
 
+    nav,
+    footer {
+        .ul-wrapper {
+            height: 2.7rem;
+
+            &:hover {
+                height: 7.5vh;
+            }
+        }
+
+        ul {
+            li {
+                font-size: $fontSize1400S;
+            }
+
+            .logo {
+                video {
+                    height: 1.4rem;
+                }
+
+                &:hover {
+                    video {
+                        height: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 2000px) {
+
     nav,
     footer {
-        ul{          
+
+        .ul-wrapper {
+            height: 2.9rem;
+
+            &:hover {
+                height: 3.5rem;
+            }
+        }
+
+        ul {
             li {
                 font-size: $fontSize2000S;
             }
 
             .logo {
                 margin-top: -0.5rem;
-    
+
                 video {
                     height    : 1.5rem;
                     transition: height 0.5s ease;
                 }
-    
+
                 &:hover {
                     video {
-                        height: 2rem;
+                        height: 1.9rem;
                     }
                 }
             }
         }
-        
+
         ul.top {
             top           : 0rem;
             padding-bottom: 0.5rem;
         }
-    
+
         ul.bottom {
             bottom     : 0rem;
             padding-top: 0.8rem;
-    
+
         }
     }
 

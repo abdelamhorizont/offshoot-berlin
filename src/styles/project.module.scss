@@ -1,27 +1,62 @@
-.project{
-    margin: 1rem;
-    margin-top: 0vh;
+@import "./typo.module.scss";
 
-    iframe{
-        margin: 1vh 0vw;
+.project {
+  margin    : 1rem;
+  margin-top: 0vh;
 
-        width   : calc(100vw - 3rem);
-        height: 90vh;
+  iframe {
+    margin: 1vh 0vw;
+
+    width : calc(100vw - 3rem);
+    height: 90vh;
+  }
+
+  .text {
+    display              : block;
+    // grid-template-columns: 1fr 2fr;
+    font-size            : $fontSizeM;
+
+    table {
+      td {
+        
+            padding-right: 1rem;
+          //   background-color: aliceblue;
+        
+      }
+      margin: 1rem 0rem;
     }
+  }
+}
 
-    .text{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        font-size: 18pt;
 
-        table{
-          td{
-              *{
-                //   margin-left: 3rem;
-                //   background-color: aliceblue;
-              }
-          }
-        }
+@media screen and (min-width: 620px) {
+  .project {
+    .text {
+      display              : grid;
+      grid-template-columns: 1fr 2fr;
+      font-size: $fontSize960M;
     }
+  }
+}
 
+@media screen and (min-width: 1400px) {
+  .project {
+
+    .text {
+
+      font-size: $fontSize1400M;
+
+    }
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .project {
+
+    .text {
+
+      font-size: $fontSize2000M;
+
+    }
+  }
 }
