@@ -1,20 +1,48 @@
 @import "../../styles/typo.module.scss";
 
-.work-title{
-    display: inline;
+
+@keyframes opa {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.work-title {
+    display        : inline;
     justify-content: space-between;
 
-    width: 100%;
+    width    : calc(100vw - 2rem);
     font-size: $fontSizeM;
 
-    *{
-        margin: 0rem 0.2rem;
+    opacity: 0;
+
+    // animation: opa 0.5s ease forwards;
+    // -moz-animation: opa 0.5s ease forwards; /* Firefox */
+
+    animation-name: opa;
+    animation-duration: 0.3s;
+
+    animation-delay: 1s;
+    -moz-animation-delay: 1s;
+
+    animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+
+
+    // animation-delay: 5s 0;
+
+    * {
+        margin    : 0rem 0.2rem;
         transition: margin 0.5s ease, font-style 0.5s ease;
     }
 
-    &:hover{
+    &:hover {
 
-        *{
+        * {
             font-style: italic;
         }
     }
@@ -23,45 +51,45 @@
 // @function randomNum($min, $max) {
 //     $rand: random();
 //     $randomNum: $min + floor($rand * (($max - $min) + 1));
-  
+
 //     @return $randomNum;
 //   }
-  
+
 
 @media screen and (min-width: 620px) {
-    .work-title{
-        display: inline-flex;
+    .work-title {
+        display        : inline-flex;
         justify-content: space-between;
-    
-        width: 100%;
-        font-size: $fontSize960M;
+
+        width     : 100%;
+        font-size : $fontSize960M;
         transition: font-size 0.5s ease;
-        
-        *{
+
+        * {
             display: flex;
-            flex: 1;
+            flex   : 1;
         }
 
-        h3{
-            justify-content:end;
+        h3 {
+            justify-content: end;
         }
 
-        h1{
+        h1 {
             // display: flex;
             justify-content: center;
         }
-    
+
     }
 }
 
 @media screen and (min-width: 1400px) {
-    .work-title{
+    .work-title {
         font-size: $fontSize1400M;
     }
 }
 
 @media screen and (min-width: 2000px) {
-    .work-title{
+    .work-title {
         font-size: $fontSize2000M;
     }
 }

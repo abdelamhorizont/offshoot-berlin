@@ -3,12 +3,12 @@
       margin: 1rem;
 
       height     : 90vh;
+      width   : calc(100vw - 2rem);
       display    : flex;
       align-items: center;
 
       .work {
          display : flex;
-         width   : calc(100vw - 3rem);
          overflow: hidden;
 
          ul {
