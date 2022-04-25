@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
-import { top, bottom, logo, ulWrapper } from './layout.module.scss'
+import { top, bottom, logo, animatedLogo, ulWrapper } from './layout.module.scss'
 
 import logoFile from '../../assets/logo rot.mp4'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, props }) => {
     // const data = useStaticQuery(graphql`
     // query {
     //     allContentfulAsset(filter: {title: {eq: "logo"}}) {
@@ -22,20 +22,24 @@ const Layout = ({ children }) => {
 
     // const logo = data.allContentfulAsset.nodes.url
 
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+
     return (
         <div>
             <header>
                 <nav>
                     <div className={ulWrapper}>
                         <ul className={top}>
-                            <li><Link to="/work">Work</Link></li>
+                            <li><Link to="/workAll">Archive</Link></li>
                             {/* <li><Link to="/"> offshoot*berlin</Link></li> */}
-                            <li className={logo}><Link to="/">
+                            <li className={page == "" ? animatedLogo : logo }><Link to="/">
                                 <video muted autoPlay loop>
                                     <source src={logoFile} type="video/mp4" />
                                 </video>
                             </Link></li>
-                            <li><Link to="/contact">Contact</Link></li>
+                            <li><Link to="/about">About</Link></li>
+
                         </ul>
                     </div>
                 </nav>
@@ -47,8 +51,9 @@ const Layout = ({ children }) => {
 
             <footer>
                 <ul className={bottom}>
-                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
                     <li><Link to="/imprint">Imprint</Link></li>
+                    {/* <li><Link to="/contact">DSVGO</Link></li> */}
                     <li><Link to="/agb">AGB</Link></li>
                 </ul>
             </footer>

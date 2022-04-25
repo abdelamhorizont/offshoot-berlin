@@ -22,8 +22,7 @@
 
 nav,
 footer {
-    // max-height: max-content;
-    // width  : calc(100vw - 2rem);
+    z-index: 2;
 
     .ul-wrapper {
         height    : 3.5rem;
@@ -69,7 +68,7 @@ footer {
             }
         }
 
-        .logo {
+        .animated-logo{
             margin-top: -0.5rem;
             animation: 0.5s ease 0.85s 1 slideInFromLeft;
             animation-fill-mode: both;
@@ -79,6 +78,21 @@ footer {
                 animation: 0.5s ease 0.75s 1 scale;
                 animation-fill-mode: both;
 
+                transition: height 0.5s ease;
+            }
+
+            &:hover {
+                video {
+                    height: 2rem;
+                }
+            }
+        }
+
+        .logo {
+            margin-top: -0.5rem;
+            
+            video {
+                height    : 1.5rem;
                 transition: height 0.5s ease;
             }
 
@@ -135,9 +149,6 @@ footer {
             display : flex;
             justify-content: center;
 
-            video {
-                // height: 3rem;
-            }
         }
     }
 }

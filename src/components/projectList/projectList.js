@@ -40,18 +40,18 @@ query {
     const [index, setIndex] = useState(0);
     const [isShown, setIsShown] = useState(false);
 
-   //  const iframeStyle = {
-   //      marginRight: isShown ? "0vw" : "-20vw"
-   //  }
+    //  const iframeStyle = {
+    //      marginRight: isShown ? "0vw" : "-20vw"
+    //  }
 
     return (
         <div className={workContainer}>
             <div className={work}
-                     onMouseEnter={() => {
-                        setIsShown(true)
-                    }}
-                    onMouseLeave={() => setIsShown(false)}
-                    >
+                onMouseEnter={() => {
+                    setIsShown(true)
+                }}
+                onMouseLeave={() => setIsShown(false)}
+            >
                 <ul>
                     {
                         data.allContentfulProject.nodes.map(node => (
@@ -61,7 +61,7 @@ query {
                                     onMouseEnter={() => {
                                         setIndex(data.allContentfulProject.nodes.indexOf(node))
                                     }}
-                                    >
+                                >
                                     <WorkTitle marg={true} path={node} />
 
                                 </li>
@@ -71,14 +71,14 @@ query {
                     }
                 </ul>
 
-                <div style={{ marginRight: isShown ? "0vw" : "-35vw", marginLeft:  isShown ? "5vw" : "0vw" }} class={youtubeContainer}>
-                <iframe 
-                    src={videoUrl(data.allContentfulProject.nodes[index].videoUrl)}
-                    title="preview"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
-                    allowfullscreen>
-                </iframe>
+                <div style={{ marginRight: isShown ? "0vw" : "-35vw", marginLeft: isShown ? "5vw" : "0vw" }} class={youtubeContainer}>
+                    <iframe
+                        src={videoUrl(data.allContentfulProject.nodes[index].videoUrl)}
+                        title="preview"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                        allowfullscreen>
+                    </iframe>
                 </div>
                 {/* <iframe src="https://player.vimeo.com/video/562817173?h=1ab10673ce&background=1" width="640" height="360" frameborder="0" allow="autoplay"></iframe> */}
 

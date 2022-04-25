@@ -1,13 +1,34 @@
 import * as React from "react"
+import { useStaticQuery, graphql } from 'gatsby'
+
 import Layout from '../components/layout/layout'
 
-export default function Contact () {
+import { contact } from '../styles/about.module.scss'
 
-    return (
-        <Layout>
-          <h1>
-            Contact
-          </h1>
-        </Layout>
-      )
+export default function Contact() {
+
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulContact {
+        nodes {
+          text {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
     }
+    `)
+
+  const text = data.allContentfulContact.nodes[0].text
+
+  return (
+    <Layout>
+      <div className={contact} >
+        <div dangerouslySetInnerHTML={{ __html: text && text.childMarkdownRemark.html }} />
+      </div>
+      halloooo
+    </Layout>
+  )
+}

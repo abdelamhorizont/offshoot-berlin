@@ -1,38 +1,46 @@
 import * as React from "react"
-// import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
+import _ from "lodash";
 
+import WorkTitle from '../components/workTitle/workTitle'
 import Layout from '../components/layout/layout'
 
+import { work, workContainer, youtubeContainer } from '../components/projectList/projectList.module.scss'
+
+
 export default function WorkAll() {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     allWpPost {
-  //       edges {
-  //         node {
-  //           id
-  //         }
-  //       }
-  //     }
-  //   }
-  //   `)
+  const data = useStaticQuery(graphql`
+  query {
+      allContentfulProject {
+          nodes {
+            title
+            year
+            client
+            videoUrl
+          }
+        }
+  } 
+  `)
 
   return (
     <Layout>
-      
-      {/* <ul>
-        {
-          data.allWpPost.edges.map(edge => (
+      <div className={workContainer}>
+        <div  className={work}>
+          <ul>
+            {
+              data.allContentfulProject.nodes.map(node => (
+                <Link to={`/${_.kebabCase(node.title)}`}>
 
-            <Link to={`/content${edge.node.uri}`}>
-              <li key={edge.node.id}>                
-                <ArticleTitle path={edge.node} />
-                <p dangerouslySetInnerHTML={{ __html: edge.node.excerpt }} />
-              </li>
-            </Link>
+                  <li>
+                    <WorkTitle marg={true} path={node} />
+                  </li>
 
-          ))
-        }
-      </ul> */}
+                </Link>
+              ))
+            }
+          </ul>
+      </div>
+        </div>
 
     </Layout>
   )

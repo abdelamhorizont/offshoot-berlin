@@ -18,10 +18,27 @@
     width    : calc(100vw - 2rem);
     font-size: $fontSizeM;
 
-    opacity: 0;
+    * {
+        margin    : 0rem 0.2rem;
+        transition: margin 0.5s ease, font-style 0.5s ease;
+    }
 
-    // animation: opa 0.5s ease forwards;
-    // -moz-animation: opa 0.5s ease forwards; /* Firefox */
+    &:hover {
+
+        * {
+            font-style: italic;
+        }
+    }
+}
+
+.animated {
+    display        : inline;
+    justify-content: space-between;
+
+    width    : calc(100vw - 2rem);
+    font-size: $fontSizeM;
+
+    opacity: 0;
 
     animation-name: opa;
     animation-duration: 0.3s;
@@ -31,9 +48,6 @@
 
     animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
-
-
-    // animation-delay: 5s 0;
 
     * {
         margin    : 0rem 0.2rem;
@@ -57,7 +71,7 @@
 
 
 @media screen and (min-width: 620px) {
-    .work-title {
+    .work-title, .animated {
         display        : inline-flex;
         justify-content: space-between;
 
@@ -83,13 +97,13 @@
 }
 
 @media screen and (min-width: 1400px) {
-    .work-title {
+    .work-title, .animated {
         font-size: $fontSize1400M;
     }
 }
 
 @media screen and (min-width: 2000px) {
-    .work-title {
+    .work-title, .animated {
         font-size: $fontSize2000M;
     }
 }

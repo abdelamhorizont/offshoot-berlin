@@ -1,0 +1,39 @@
+@import "./typo.module.scss";
+
+.about {
+   height     : 90vh;
+   width   : calc(100vw - 2rem);
+   display    : flex;
+   align-items: center;
+   justify-content: flex-end;
+
+   margin: 1rem;
+   
+   *{
+      width: 50vw;
+      font-size          : $fontSize2000M;
+      text-transform:lowercase;
+      text-align: left;
+   }
+
+}
+
+.contact {
+   height     : 90vh;
+   width   : calc(100vw - 2rem);
+   display    : flex;
+   align-items: center;
+   justify-content: flex-start;
+
+   margin: 1rem;
+   
+   *{
+      width: 50vw;
+      font-size          : $fontSize2000M;
+      // text-transform:lowercase;
+      font-weight: 100;
+
+      text-align:left;
+   }
+
+}
