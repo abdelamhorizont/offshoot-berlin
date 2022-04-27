@@ -25,7 +25,7 @@ const Layout = ({ children, props }) => {
     var path = isBrowser() && window.location.pathname;
     var pageName = "";
     // var pageName = path.split("/").pop();
-    console.log(pageName)
+    // console.log(pageName)
 
     return (
         <div>
