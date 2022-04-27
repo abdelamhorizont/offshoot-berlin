@@ -9,7 +9,8 @@ export default function WorkTitle(props) {
 
     const isBrowser = () => typeof window !== "undefined"
     var path = isBrowser() && window.location.pathname;
-    var page = path.split("/").pop();
+    // var page = path.split("/").pop();
+    var page = "";
 
     const mobile = isBrowser() && window.screen.width < 620 ? true : false
 
