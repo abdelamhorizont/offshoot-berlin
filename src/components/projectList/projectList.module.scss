@@ -1,6 +1,9 @@
+@import "../../styles/typo.module.scss";
+
 @media screen and (max-width: 620px) {
    .work-container {
       margin: 1rem;
+      margin-top: -2rem;
 
       height     : 90vh;
       width   : calc(100vw - 2rem);
@@ -16,6 +19,7 @@
 
             li {
                display: flex;
+               margin: 2rem 0rem;
             }
          }
 
@@ -53,6 +57,7 @@
       .work {
          display : flex;
          width   : calc(100vw - 3rem);
+         max-height: fit-content;
          overflow: hidden;
 
          ul {
@@ -64,9 +69,8 @@
          }
 
          .youtube-container {
-            // display            : none;
             overflow           : hidden;
-            //   height        : 100%;
+            //   height        : 20%;
             //   aspect-ratio  : 16/9;
             pointer-events     : none;
 
@@ -80,6 +84,11 @@
                /* ...and bring it back again */
                margin-top : -30%;
                margin-left: 0%;
+            }
+
+            video {
+               height     : 100%;
+               margin-left: 5rem;
             }
          }
       }
@@ -100,6 +109,10 @@
          iframe {
             height    : 200%;
             margin-top: -100%;
+         }
+
+         video {
+            // height     : calc(6 * $fontSize1400M);
          }
       }
    }
@@ -142,6 +155,10 @@
                /* ...and bring it back again */
                margin-top : -30%;
                margin-left: 0%;
+            }
+
+            video {
+               // height     : calc(6 * $fontSize2000M);
             }
          }
       }

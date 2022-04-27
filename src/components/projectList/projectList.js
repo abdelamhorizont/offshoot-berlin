@@ -1,10 +1,11 @@
 import * as React from 'react'
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import _ from "lodash";
 
 import WorkTitle from '../workTitle/workTitle'
+import logoFile from '../../assets/logo rot.mp4'
 
 import { work, workContainer, youtubeContainer } from './projectList.module.scss'
 
@@ -23,15 +24,29 @@ function videoUrl(url) {
     }
 }
 
+  
 export default function ProjectList() {
     const data = useStaticQuery(graphql`
 query {
-    allContentfulProject {
+    allContentfulProject(filter: {category: {eq: "selected projects"}}) {
         nodes {
           title
           year
           client
           videoUrl
+          videoPreview {
+            file {
+              url
+            }
+          }
+        }
+      }
+      allContentfulAsset(filter: {title: {eq: "showreel"}}) {
+        nodes {
+          file {
+            url
+          }
+          title
         }
       }
 } 
@@ -39,20 +54,32 @@ query {
 
     const [index, setIndex] = useState(0);
     const [isShown, setIsShown] = useState(false);
+    const [videoWidth, setVideoWidth] = useState("-200vw");
+    const [videoHeight, setVideoHeight] = useState("10vw");
+    const videoContainer = useRef(null);
+    const ulContainer = useRef(null);
 
-    //  const iframeStyle = {
-    //      marginRight: isShown ? "0vw" : "-20vw"
-    //  }
+
+    React.useEffect(() => {
+        window.addEventListener('load', handleLoad())
+    }, []);
+
+
+    const handleLoad = () => {
+        // setVideoWidth("-" + videoContainer.current.clientWidth + "px")
+        setVideoHeight(ulContainer.current.offsetHeight + "px")
+    }
 
     return (
         <div className={workContainer}>
             <div className={work}
                 onMouseEnter={() => {
                     setIsShown(true)
+                    setVideoHeight(ulContainer.current.offsetHeight + "px")
                 }}
                 onMouseLeave={() => setIsShown(false)}
             >
-                <ul>
+                <ul ref={ulContainer} >
                     {
                         data.allContentfulProject.nodes.map(node => (
                             <Link to={`/${_.kebabCase(node.title)}`}>
@@ -71,17 +98,23 @@ query {
                     }
                 </ul>
 
-                <div style={{ marginRight: isShown ? "0vw" : "-35vw", marginLeft: isShown ? "5vw" : "0vw" }} class={youtubeContainer}>
-                    <iframe
-                        src={videoUrl(data.allContentfulProject.nodes[index].videoUrl)}
-                        title="preview"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                {/* <iframe src="https://player.vimeo.com/video/562817173?h=1ab10673ce&background=1" width="640" height="360" frameborder="0" allow="autoplay"></iframe> */}
-
+                {data.allContentfulProject.nodes[index].videoPreview ?
+                    <div style={{ marginRight: isShown ? "-50vw" : videoWidth, maxHeight: videoHeight }} class={youtubeContainer}>
+                        <video ref={videoContainer} muted autoPlay loop>
+                            <source src={data.allContentfulProject.nodes[index].videoPreview.file.url} type="video/mp4" />
+                        </video>
+                    </div>
+                    :
+                    <div style={{ marginRight: isShown ? "0vw" : "-35vw", marginLeft: isShown ? "5vw" : "0vw" }} class={youtubeContainer}>
+                        <iframe
+                            src={videoUrl(data.allContentfulProject.nodes[index].videoUrl)}
+                            title="preview"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                }
 
             </div>
         </div>

@@ -2,23 +2,25 @@
 
 @keyframes slideInFromLeft {
     0% {
-      transform: translateY(45vh);
-      height: 2rem;
+        transform: translateY(45vh);
+        height   : 2rem;
     }
-    100% {
-      transform: translateY(0);
-      height: 1.5rem;
-    }
-  }
 
-  @keyframes scale {
-    0% {
-      transform: scale(1.5);
+    100% {
+        transform: translateY(0);
+        height   : 1.5rem;
     }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1.5);
+    }
+
     100% {
         transform: scale(1);
     }
-  }
+}
 
 nav,
 footer {
@@ -40,7 +42,7 @@ footer {
         justify-content : space-between;
         position        : fixed;
         background-color: black;
-
+        
         width  : calc(100vw - 3rem);
         padding: 1.5rem;
 
@@ -66,16 +68,28 @@ footer {
             li:not(.logo) {
                 margin: 0.5rem 0rem;
             }
+
+            .logo{
+                video {
+                    height: 2rem;
+                }
+            }
+
+            .animated-logo{
+                video {
+                    height: 2rem;
+                }
+            }
         }
 
-        .animated-logo{
-            margin-top: -0.5rem;
-            animation: 0.5s ease 0.85s 1 slideInFromLeft;
+        .animated-logo {
+            margin-top         : -0.5rem;
+            animation          : 0.5s ease 0.85s 1 slideInFromLeft;
             animation-fill-mode: both;
-            
+
             video {
-                height    : 1.5rem;
-                animation: 0.5s ease 0.75s 1 scale;
+                height             : 1.5rem;
+                animation          : 0.5s ease 0.75s 1 scale;
                 animation-fill-mode: both;
 
                 transition: height 0.5s ease;
@@ -90,9 +104,24 @@ footer {
 
         .logo {
             margin-top: -0.5rem;
-            
+
             video {
                 height    : 1.5rem;
+                transition: height 0.5s ease;
+            }
+
+            &:hover {
+                video {
+                    height: 2rem;
+                }
+            }
+        }
+
+        .about-logo {
+            margin-top: 25vh;
+
+            video {
+                height    : 2rem;
                 transition: height 0.5s ease;
             }
 
@@ -121,34 +150,69 @@ footer {
     nav,
     footer {
 
-        .ul-wrapper {
-            height    : 3.5rem;
-        }
-
         ul.top {
-            top              : 46.5rem;
-            padding-bottom: 1.5rem;
+            display: flex;
+            justify-content : center;
+
+            height: 4rem;
+            top     : calc(100vh - 4.5rem);
+            padding-top     : 1rem;
+            text-align: center;
         }
 
         ul.bottom {
-            bottom     : 0rem;
-            padding-top: 0.8rem;
-
+            top     : calc(100vh - 2.5rem);
+            padding-top     : 1rem;
+        }
+        
+        ul{
+            position: fixed;
+            display         : inline-flex;
+            justify-content : center;
         }
 
         .logo {
             position        : fixed;
             background-color: black;
             top             : 0rem;
-            left: 0rem;
+            left            : 0rem;
 
-            width   : 100vw;
-            padding-top: 1.5rem;
-            padding-bottom: 0.5rem;
-            overflow: hidden;
-            display : flex;
+            width          : 100vw;
+            padding-top    : 1.5rem;
+            padding-bottom : 0.5rem;
+            overflow       : hidden;
+            display        : flex;
             justify-content: center;
 
+        }
+
+        .animated-logo {
+            position       : fixed;
+            top            : 0rem;
+            left           : 0rem;
+            width          : 100vw;
+            padding-top    : 1.5rem;
+            padding-bottom : 0.5rem;
+            overflow       : hidden;
+            display        : flex;
+            justify-content: center;
+
+            animation          : 0.5s ease 0.85s 1 slideInFromLeft;
+            animation-fill-mode: both;
+
+            video {
+                height             : 1.5rem;
+                animation          : 0.5s ease 0.75s 1 scale;
+                animation-fill-mode: both;
+
+                transition: height 0.5s ease;
+            }
+
+            &:hover {
+                video {
+                    height: 2rem;
+                }
+            }
         }
     }
 }
@@ -174,13 +238,23 @@ footer {
                 video {
                     height: 1.2rem;
                 }
+            }
 
-                &:hover {
+            &:hover {
+    
+                .logo{
+                    video {
+                        height: 1.5rem;
+                    }
+                }
+    
+                .animated-logo{
                     video {
                         height: 1.5rem;
                     }
                 }
             }
+            
         }
     }
 }
@@ -219,7 +293,7 @@ footer {
 
 @media screen and (min-width: 2000px) {
 
-    
+
     nav,
     footer {
 

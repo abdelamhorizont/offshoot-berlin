@@ -12,15 +12,14 @@
   }
 
   .text {
-    display              : block;
+    display                 : block;
     // grid-template-columns: 1fr 2fr;
-    font-size            : $fontSizeM;
+    font-size               : $fontSizeM;
 
     table {
       td {
-        
-            padding-right: 1rem;
-          //   background-color: aliceblue;
+
+        padding-right: 1rem;
       }
       margin: 1rem 0rem;
     }
@@ -33,25 +32,25 @@
     .text {
       display              : grid;
       grid-template-columns: 1fr 2fr;
-      font-size: $fontSize960M;
+      font-size            : $fontSize960M;
     }
 
     iframe {
       margin: 1vh 0vw;
-  
+
       width : calc(100vw - 3rem);
-      height: 90vh;
+      height: 84vh;
     }
   }
 }
 
 @media screen and (min-width: 1400px) {
   .project {
-
     .text {
-
       font-size: $fontSize1400M;
-
+    }
+    iframe {
+      height: 88vh;
     }
   }
 }

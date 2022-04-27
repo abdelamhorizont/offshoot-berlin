@@ -1,39 +1,105 @@
 @import "./typo.module.scss";
 
 .about {
-   height     : 90vh;
-   width   : calc(100vw - 2rem);
-   display    : flex;
-   align-items: center;
+   height         : 90vh;
+   width          : calc(100vw - 2rem);
+   display        : flex;
+   align-items    : center;
    justify-content: flex-end;
 
    margin: 1rem;
-   
-   *{
-      width: 50vw;
-      font-size          : $fontSize2000M;
-      text-transform:lowercase;
-      text-align: left;
+
+   * {
+      width         : 50vw;
+      font-size     : $fontSizeM;
+      text-transform: lowercase;
+      text-align    : left;
    }
 
 }
 
 .contact {
-   height     : 90vh;
-   width   : calc(100vw - 2rem);
-   display    : flex;
-   align-items: center;
-   justify-content: flex-start;
 
    margin: 1rem;
-   
-   *{
-      width: 50vw;
-      font-size          : $fontSize2000M;
-      // text-transform:lowercase;
-      font-weight: 100;
 
-      text-align:left;
+   div {
+      height         : 90vh;
+      width          : calc(50vw - 2rem);
+      display        : inline-flex;
+      align-items    : center;
+      justify-content: space-between;
+      margin-top     : -5vh;
+
+      table {
+         display: inline;
+      }
    }
 
+   * {
+      font-size  : $fontSize2000M;
+      font-weight: 100;
+      text-align : left;
+   }
+
+}
+
+@media screen and (max-width: 620px) {
+
+   .about,
+   .contact {
+      height: 80vh;
+
+      * {
+         width: 100%;
+      }
+   }
+
+   .contact {
+      div {
+         width  : calc(100vw - 2rem);
+         display: block;
+         margin-top: 5rem;
+
+         table {
+            display : block;
+            // width: 100vw;
+            overflow: hidden;
+            margin  : 1rem 0rem;
+
+            * {
+               // display: inline;
+               width  : 100%;
+            }
+         }
+      }
+
+      font-size: $fontSizeS;
+   }
+}
+
+@media screen and (min-width: 620px) {
+   .about,
+   .contact {
+      * {
+         font-size     : $fontSize960M;
+      }
+   }
+}
+
+@media screen and (min-width: 1400px) {
+   .about,
+   .contact {
+      * {
+         font-size     : $fontSize1400M;
+      }
+   }
+}
+
+@media screen and (min-width: 2000px) {
+   .about,
+   .contact {
+      * {
+         font-size     : $fontSize2000M;
+      }
+   }
 }

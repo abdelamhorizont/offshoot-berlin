@@ -39,6 +39,18 @@
     font-size: $fontSizeM;
 
     opacity: 0;
+    
+    * {
+        margin    : 0rem 0.2rem;
+        transition: margin 0.5s ease, font-style 0.5s ease;
+    }
+    
+    &:hover {
+        
+        * {
+            font-style: italic;
+        }
+    }
 
     animation-name: opa;
     animation-duration: 0.3s;
@@ -48,18 +60,6 @@
 
     animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
-
-    * {
-        margin    : 0rem 0.2rem;
-        transition: margin 0.5s ease, font-style 0.5s ease;
-    }
-
-    &:hover {
-
-        * {
-            font-style: italic;
-        }
-    }
 }
 
 // @function randomNum($min, $max) {

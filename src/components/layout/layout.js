@@ -1,26 +1,25 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
-import { top, bottom, logo, animatedLogo, ulWrapper } from './layout.module.scss'
+import { top, bottom, logo, animatedLogo, aboutLogo, ulWrapper } from './layout.module.scss'
 
-import logoFile from '../../assets/logo rot.mp4'
+// import logoFile from '../../assets/logo rot.mp4'
 
 const Layout = ({ children, props }) => {
-    // const data = useStaticQuery(graphql`
-    // query {
-    //     allContentfulAsset(filter: {title: {eq: "logo"}}) {
-    //           nodes {
-    //             title
-    //             file {
-    //               url
-    //             }
-    //             url
-    //           }
-    //       }
-    //   }
-    // `)
+    const data = useStaticQuery(graphql`
+    query {
+          allContentfulAsset(filter: {title: {eq: "logo"}}) {
+            nodes {
+              file {
+                url
+                fileName
+              }
+            }
+          }
+    } 
+    `)
 
-    // const logo = data.allContentfulAsset.nodes.url
+    const logoFile = data.allContentfulAsset.nodes[0].file.url
 
     var path = window.location.pathname;
     var page = path.split("/").pop();
@@ -32,14 +31,12 @@ const Layout = ({ children, props }) => {
                     <div className={ulWrapper}>
                         <ul className={top}>
                             <li><Link to="/workAll">Archive</Link></li>
-                            {/* <li><Link to="/"> offshoot*berlin</Link></li> */}
-                            <li className={page == "" ? animatedLogo : logo }><Link to="/">
+                            <li className={page == "" ? animatedLogo  : logo  && page == "about" ? logo : logo }><Link to="/">
                                 <video muted autoPlay loop>
                                     <source src={logoFile} type="video/mp4" />
                                 </video>
                             </Link></li>
                             <li><Link to="/about">About</Link></li>
-
                         </ul>
                     </div>
                 </nav>
