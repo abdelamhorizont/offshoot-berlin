@@ -20,8 +20,9 @@ const Layout = ({ children, props }) => {
     `)
 
     const logoFile = data.allContentfulAsset.nodes[0].file.url
-
-    var path = window.location.pathname;
+  
+    const isBrowser = () => typeof window !== "undefined"
+    var path = isBrowser() && window.location.pathname;
     var page = path.split("/").pop();
 
     return (

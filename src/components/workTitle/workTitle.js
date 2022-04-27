@@ -7,10 +7,11 @@ import {
 
 export default function WorkTitle(props) {
 
-    var path = window.location.pathname;
+    const isBrowser = () => typeof window !== "undefined"
+    var path = isBrowser() && window.location.pathname;
     var page = path.split("/").pop();
 
-    const mobile = window.screen.width < 620 ? true : false
+    const mobile = isBrowser() && window.screen.width < 620 ? true : false
 
     function randomNumber(min, max) { // min and max included
         return Math.floor(Math.random() * (max - min + 1) + min);

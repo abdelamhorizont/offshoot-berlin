@@ -24,7 +24,7 @@ function videoUrl(url) {
     }
 }
 
-  
+
 export default function ProjectList() {
     const data = useStaticQuery(graphql`
 query {
@@ -61,7 +61,8 @@ query {
 
 
     React.useEffect(() => {
-        window.addEventListener('load', handleLoad())
+        const isBrowser = () => typeof window !== "undefined"
+        isBrowser() && window.addEventListener('load', handleLoad())
     }, []);
 
 

@@ -37,7 +37,8 @@ export default function WorkAll() {
 
 
   React.useEffect(() => {
-    window.addEventListener('load', handleLoad())
+    const isBrowser = () => typeof window !== "undefined"
+    isBrowser() && window.addEventListener('load', handleLoad())
   }, []);
 
 
@@ -49,11 +50,11 @@ export default function WorkAll() {
     <Layout>
       <div className={workContainer}>
         <div className={work}
-               onMouseEnter={() => {
-                setIsShown(true)
-                setVideoHeight(ulContainer.current.offsetHeight + "px")
-            }}
-            onMouseLeave={() => setIsShown(false)}
+          onMouseEnter={() => {
+            setIsShown(true)
+            setVideoHeight(ulContainer.current.offsetHeight + "px")
+          }}
+          onMouseLeave={() => setIsShown(false)}
         >
           <ul ref={ulContainer}>
             {
