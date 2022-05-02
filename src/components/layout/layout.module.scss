@@ -3,12 +3,12 @@
 @keyframes slideInFromLeft {
     0% {
         transform: translateY(45vh);
-        height   : 2rem;
+        // height   : 2rem;
     }
 
     100% {
         transform: translateY(0);
-        height   : 1.5rem;
+        // height   : 1.5rem;
     }
 }
 
@@ -24,7 +24,6 @@
 
 nav,
 footer {
-    z-index: 2;
 
     .ul-wrapper {
         height    : 3.5rem;
@@ -41,6 +40,8 @@ footer {
         display         : inline-flex;
         justify-content : space-between;
         position        : fixed;
+        z-index: 2;
+
         background-color: black;
         
         width  : calc(100vw - 3rem);
@@ -136,12 +137,14 @@ footer {
     ul.top {
         top           : 0rem;
         padding-bottom: 0.5rem;
+        background-color: black;
+        // z-index: 2;
     }
 
     ul.bottom {
         bottom     : 0rem;
         padding-top: 0.8rem;
-
+        // z-index: 2;
     }
 }
 
@@ -210,7 +213,7 @@ footer {
 
             &:hover {
                 video {
-                    height: 2rem;
+                    // height: 2rem;
                 }
             }
         }
@@ -237,6 +240,14 @@ footer {
             .logo {
                 video {
                     height: 1.2rem;
+                }
+            }
+
+            .animated-logo {    
+                video {
+                    height             : 1.2rem;
+                    animation          : 0.5s ease 0.75s 1 scale;
+                    animation-fill-mode: both;
                 }
             }
 

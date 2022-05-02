@@ -5,7 +5,7 @@ import { top, bottom, logo, animatedLogo, aboutLogo, ulWrapper } from './layout.
 
 // import logoFile from '../../assets/logo rot.mp4'
 
-const Layout = ({ children, props }) => {
+const Layout = ( props ) => {
     const data = useStaticQuery(graphql`
     query {
           allContentfulAsset(filter: {title: {eq: "logo"}}) {
@@ -22,10 +22,9 @@ const Layout = ({ children, props }) => {
     const logoFile = data.allContentfulAsset.nodes[0].file.url
   
     const isBrowser = () => typeof window !== "undefined"
-    var path = isBrowser() && window.location.pathname;
-    var pageName = "";
+    const path = isBrowser() && window.location.pathname;
+    const pageName = props.path? props.path : ""
     // var pageName = path.split("/").pop();
-    // console.log(pageName)
 
     return (
         <div>
@@ -34,7 +33,7 @@ const Layout = ({ children, props }) => {
                     <div className={ulWrapper}>
                         <ul className={top}>
                             <li><Link to="/workAll">Archive</Link></li>
-                            <li className={pageName == "" ? animatedLogo  : logo  && pageName == "about" ? logo : logo }><Link to="/">
+                            <li className={pageName == "/" ? animatedLogo  : logo  && pageName == "about" ? logo : logo }><Link to="/">
                                 <video muted autoPlay loop>
                                     <source src={logoFile} type="video/mp4" />
                                 </video>
@@ -46,7 +45,7 @@ const Layout = ({ children, props }) => {
             </header>
 
             <main>
-                {children}
+                {props.children}
             </main>
 
             <footer>
