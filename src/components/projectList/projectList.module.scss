@@ -49,6 +49,7 @@
 @media screen and (min-width: 620px) {
 .work-container {
       margin: 1rem;
+      margin-top: -1rem;
 
       height     : 90vh;
       display    : flex;
@@ -117,6 +118,7 @@
 @media screen and (min-width: 2000px) {
    .work-container {
       margin: 1rem;
+      margin-top: -1rem;
 
       height     : 90vh;
       display    : flex;

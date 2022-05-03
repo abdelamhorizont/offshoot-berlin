@@ -28,7 +28,6 @@ export default function Contact() {
       <div className={contact} >
         <div dangerouslySetInnerHTML={{ __html: text && text.childMarkdownRemark.html }} />
       </div>
-      halloooo
     </Layout>
   )
 }

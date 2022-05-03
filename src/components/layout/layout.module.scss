@@ -81,6 +81,10 @@ footer {
                     height: 2rem;
                 }
             }
+
+            .about-logo {
+                margin-top: 15vh;
+            }
         }
 
         .animated-logo {
@@ -119,11 +123,11 @@ footer {
         }
 
         .about-logo {
-            margin-top: 25vh;
+            margin-top: 15vh;
 
             video {
                 height    : 2rem;
-                transition: height 0.5s ease;
+                // transition: height 0.5s ease;
             }
 
             &:hover {
@@ -210,12 +214,6 @@ footer {
 
                 transition: height 0.5s ease;
             }
-
-            &:hover {
-                video {
-                    // height: 2rem;
-                }
-            }
         }
     }
 }
@@ -264,6 +262,10 @@ footer {
                         height: 1.5rem;
                     }
                 }
+
+                .about-logo {
+                    margin-top: 15vh;
+                }
             }
             
         }
@@ -289,12 +291,29 @@ footer {
 
             .logo {
                 video {
-                    height: 1.4rem;
+                    height: 1.3rem;
                 }
+            }
 
-                &:hover {
+            .animated-logo {    
+                video {
+                    height             : 1.3rem;
+                    animation          : 0.5s ease 0.75s 1 scale;
+                    animation-fill-mode: both;
+                }
+            }
+
+            &:hover {
+    
+                .logo{
                     video {
-                        height: 1.8rem;
+                        height: 1.6rem;
+                    }
+                }
+    
+                .animated-logo{
+                    video {
+                        height: 1.6rem;
                     }
                 }
             }

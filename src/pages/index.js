@@ -10,8 +10,6 @@ import '../styles/global.scss'
 import '../styles/typo.module.scss'
 
 export default function Home({location}) {
-  console.log(location.pathname)
-
   return (
     <div>
       <Layout path={location.pathname}>

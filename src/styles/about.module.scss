@@ -10,7 +10,7 @@
    margin: 1rem;
 
    * {
-      width         : 50vw;
+      width         : 90%;
       font-size     : $fontSizeM;
       text-transform: lowercase;
       text-align    : left;
@@ -40,13 +40,31 @@
       font-weight: 100;
       text-align : left;
    }
+}
+
+.agb {
+   height         : 90vh;
+   width          : calc(100vw - 2rem);
+   display        : flex;
+   align-items    : center;
+   justify-content: flex-end;
+
+   margin: 1rem;
+
+   * {
+      width         : 90%;
+      font-size     : $fontSizeS;
+      text-transform: lowercase;
+      text-align    : left;
+   }
 
 }
 
 @media screen and (max-width: 620px) {
 
    .about,
-   .contact {
+   .contact,
+   .agb {
       height: 80vh;
 
       * {
