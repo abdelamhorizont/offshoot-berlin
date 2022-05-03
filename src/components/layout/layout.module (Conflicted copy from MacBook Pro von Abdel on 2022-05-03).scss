@@ -55,7 +55,6 @@ footer {
             display: flex;
             display: -webkit-flex;
 
-            -webkit-flex   : 1;
             flex   : 1;
 
             font-size  : $fontSizeS;
@@ -71,7 +70,6 @@ footer {
 
         li:not(:first-child, :last-child) {
             justify-content: center;
-            -webkit-justify-content: center;
         }
 
         &:hover {
