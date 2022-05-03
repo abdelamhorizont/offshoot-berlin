@@ -8,4 +8,10 @@ html{
     background-color: black;
     scroll-behavior: smooth;
 
+    ::selection {
+        // background: #11ff00; /* WebKit/Blink Browsers */
+        text-shadow: 0px 0px 20px rgb(0, 255, 42);    
+
+        color: rgb(0, 255, 42);    
+    }
 }
