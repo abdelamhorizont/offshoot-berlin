@@ -100,20 +100,20 @@ query {
                 </ul>
 
                 {data.allContentfulProject.nodes[index].videoPreview ?
-                    <div style={{ marginRight: isShown ? "0vw" : videoWidth, maxHeight: videoHeight }} class={youtubeContainer}>
+                    <div style={{ marginRight: isShown ? "0vw" : "-30vw", maxHeight: videoHeight }} className={youtubeContainer}>
                         <video ref={videoContainer} muted autoPlay loop>
                             <source src={data.allContentfulProject.nodes[index].videoPreview.file.url} type="video/mp4" />
                         </video>
                     </div>
                     :
-                    <div style={{ marginRight: isShown ? "0vw" : "-35vw", marginLeft: isShown ? "5vw" : "0vw" }} class={youtubeContainer}>
-                        <iframe
+                    <div style={{ marginRight: isShown ? "0vw" : "-35vw", marginLeft: isShown ? "5vw" : "0vw" }} className={youtubeContainer}>
+                        {/* <iframe
                             src={videoUrl(data.allContentfulProject.nodes[index].videoUrl)}
                             title="preview"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
                             allowfullscreen>
-                        </iframe>
+                        </iframe> */}
                     </div>
                 }
 

@@ -32,13 +32,13 @@ const Post = ({ data }) => {
       <div className={project}>
         <WorkTitle marg={false}  path={data.contentfulProject} />
 
-        {/* <iframe
+        <iframe
           src={videoSrc}
           title="project"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
-        </iframe> */}
+        </iframe>
 
         <div className={text}>
           <div dangerouslySetInnerHTML={{ __html: data.contentfulProject.team && data.contentfulProject.team.childMarkdownRemark.html }} />

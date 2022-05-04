@@ -105,11 +105,17 @@
       }
 
       .youtube-container {
-         display: inline;
+         // display: inline;
+         overflow           : hidden;
 
          iframe {
             height    : 200%;
             margin-top: -100%;
+         }
+
+         video {
+            height     : 100%;
+            margin-left: 5rem;
          }
       }
    }
