@@ -66,7 +66,7 @@ footer {
 
         li:last-child {
             justify-content: end;
-            -webkit-justify-content: end;
+            -webkit-justify-content: flex-end;
         }
 
         li:not(:first-child, :last-child) {
@@ -168,14 +168,13 @@ footer {
 
         ul.top {
             display: flex;
+            display: -webkit-flex;
             justify-content : center;
-            justify-content : -webkit-center;
 
             height: 4rem;
             top     : calc(100vh - 4.5rem);
             padding-top     : 1rem;
             text-align: center;
-            text-align: -webkit-center;
         }
 
         ul.bottom {
@@ -186,6 +185,8 @@ footer {
         ul{
             position: fixed;
             display         : inline-flex;
+            display: -webkit-inline-flex;
+
             justify-content : center;
             justify-content : -webkit-center;
             z-index: 2;
@@ -205,7 +206,6 @@ footer {
             overflow       : hidden;
             display        : flex;
             justify-content: center;
-            justify-content: -webkit-center;
 
         }
 

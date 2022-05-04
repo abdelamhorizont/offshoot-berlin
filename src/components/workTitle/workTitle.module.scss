@@ -81,11 +81,14 @@
 
         * {
             display: flex;
+            display: -webkit-flex;
             flex   : 1;
         }
 
         h3 {
             justify-content: end;
+            -webkit-justify-content: flex-end;
+
         }
 
         h1 {
