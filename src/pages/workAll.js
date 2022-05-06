@@ -18,6 +18,7 @@ export default function WorkAll() {
             year
             client
             videoUrl
+            id
           }
         }
         allContentfulAsset(filter: {title: {eq: "showreel"}}) {
@@ -61,7 +62,7 @@ export default function WorkAll() {
               data.allContentfulProject.nodes.map(node => (
                 <Link to={`/${_.kebabCase(node.title)}`}>
 
-                  <li>
+                  <li key={node.id}>
                     <WorkTitle marg={true} path={node} />
                   </li>
 
@@ -70,7 +71,7 @@ export default function WorkAll() {
             }
           </ul>
 
-          <div style={{ marginRight: isShown ? "-200vw" : "-200vw", maxHeight: "90px" }} class={youtubeContainer}>
+          <div style={{ marginRight: isShown ? "-200vw" : "-200vw", maxHeight: "90px" }} className={youtubeContainer}>
             <video muted autoPlay loop>
               <source src={data.allContentfulAsset.nodes[0].file.url} type="video/mp4" />
             </video>

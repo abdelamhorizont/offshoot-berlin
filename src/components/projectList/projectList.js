@@ -5,7 +5,6 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import _ from "lodash";
 
 import WorkTitle from '../workTitle/workTitle'
-import logoFile from '../../assets/logo rot.mp4'
 
 import { work, workContainer, youtubeContainer } from './projectList.module.scss'
 
@@ -30,6 +29,7 @@ export default function ProjectList() {
 query {
     allContentfulProject(filter: {category: {eq: "selected projects"}}) {
         nodes {
+          id
           title
           year
           client
@@ -54,7 +54,7 @@ query {
 
     const [index, setIndex] = useState(0);
     const [isShown, setIsShown] = useState(false);
-    const [videoWidth, setVideoWidth] = useState("-200vw");
+    const [videoWidth, setVideoWidth] = useState("0vw");
     const [videoHeight, setVideoHeight] = useState("10vw");
     const videoContainer = useRef(null);
     const ulContainer = useRef(null);
@@ -69,6 +69,7 @@ query {
     const handleLoad = () => {
         // setVideoWidth("-" + videoContainer.current.clientWidth + "px")
         setVideoHeight(ulContainer.current.offsetHeight + "px")
+        setVideoWidth(videoContainer.current.offsetWidth + "px")
     }
 
     return (
@@ -77,6 +78,10 @@ query {
                 onMouseEnter={() => {
                     setIsShown(true)
                     setVideoHeight(ulContainer.current.offsetHeight + "px")
+                    setVideoWidth(videoContainer.current.offsetWidth + "px")
+                    console.log(videoHeight)
+                    console.log(videoWidth)
+
                 }}
                 onMouseLeave={() => setIsShown(false)}
             >
@@ -84,23 +89,21 @@ query {
                     {
                         data.allContentfulProject.nodes.map(node => (
                             <Link to={`/${_.kebabCase(node.title)}`}>
-
-                                <li
+                                <li key={node.id}
                                     onMouseEnter={() => {
                                         setIndex(data.allContentfulProject.nodes.indexOf(node))
                                     }}
                                 >
                                     <WorkTitle marg={true} path={node} />
-
                                 </li>
-
                             </Link>
                         ))
                     }
                 </ul>
+                
 
                 {data.allContentfulProject.nodes[index].videoPreview ?
-                    <div style={{ marginRight: isShown ? "0vw" : "-30vw", maxHeight: videoHeight }} className={youtubeContainer}>
+                    <div style={{ marginRight: isShown ? "0rem" : "-20rem", maxHeight: videoHeight, width : videoWidth }} className={youtubeContainer}>
                         <video ref={videoContainer} muted autoPlay loop>
                             <source src={data.allContentfulProject.nodes[index].videoPreview.file.url} type="video/mp4" />
                         </video>

@@ -63,6 +63,7 @@
 
          ul {
             width: 100%;
+            // flex: 1;
 
             li {
                display: flex;
@@ -70,12 +71,14 @@
          }
 
          .youtube-container {
+            display: flex;
+            justify-content: center;
+            // width: 200px;
             overflow           : hidden;
             //   height        : 20%;
             //   aspect-ratio  : 16/9;
             pointer-events     : none;
 
-            //   margin-left   : 5vw;
             transition: margin-right 0.7s ease;
 
             iframe {
@@ -88,8 +91,10 @@
             }
 
             video {
+               // display: flex;
+
                height     : 100%;
-               margin-left: 5rem;
+               // margin-left: 5rem;
             }
          }
       }
@@ -115,7 +120,7 @@
 
          video {
             height     : 100%;
-            margin-left: 5rem;
+            // margin-left: 5rem;
          }
       }
    }
