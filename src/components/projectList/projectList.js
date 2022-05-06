@@ -79,9 +79,6 @@ query {
                     setIsShown(true)
                     setVideoHeight(ulContainer.current.offsetHeight + "px")
                     setVideoWidth(videoContainer.current.offsetWidth + "px")
-                    console.log(videoHeight)
-                    console.log(videoWidth)
-
                 }}
                 onMouseLeave={() => setIsShown(false)}
             >
