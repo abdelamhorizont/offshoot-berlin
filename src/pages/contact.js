@@ -6,7 +6,6 @@ import Layout from '../components/layout/layout'
 import { contact } from '../styles/about.module.scss'
 
 export default function Contact() {
-
   const data = useStaticQuery(graphql`
     query {
       allContentfulContact {

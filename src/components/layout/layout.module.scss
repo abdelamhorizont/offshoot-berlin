@@ -175,14 +175,29 @@ footer {
             top     : calc(100vh - 4.5rem);
             padding-top     : 1rem;
             text-align: center;
-            z-index: 2;
+            // z-index: 2;
 
+            li{
+                z-index: 2;
+
+                &:hover {
+                    li:not(.logo) {
+                        margin: 0.5rem 0rem;
+                    }
+        
+                    .logo{
+                        video {
+                            height: 1.5rem;
+                        }
+                    }
+                }
+            }
         }
 
         ul.bottom {
             top     : calc(100vh - 2.5rem);
             padding-top     : 1rem;
-            z-index: 3;
+            // z-index: 3;
         }
         
         ul{

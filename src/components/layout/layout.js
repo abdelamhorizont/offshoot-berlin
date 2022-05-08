@@ -24,7 +24,6 @@ const Layout = ( props ) => {
     const isBrowser = () => typeof window !== "undefined"
     const path = isBrowser() && window.location.pathname;
     const pageName = props.path? props.path : ""
-    // var pageName = path.split("/").pop();
 
     return (
         <div>
@@ -33,7 +32,7 @@ const Layout = ( props ) => {
                     <div className={ulWrapper}>
                         <ul className={top}>
                             <li><Link to="/workAll">Archive</Link></li>
-                            <li className={pageName == "/" ? animatedLogo  : logo  && pageName == "/about" ? logo : logo }><Link to="/">
+                            <li className={pageName == "/" ? animatedLogo  : logo }><Link to="/">
                                 <video muted autoPlay loop webkit-playsinline playsinlinegit>
                                     <source src={logoFile} type="video/mp4" />
                                 </video>
