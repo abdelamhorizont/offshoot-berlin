@@ -28,8 +28,8 @@ export default function WorkTitle(props) {
         return (
             <div className={page == "" ? animated : workTitle}>
                 <h2>{props.path.client}</h2>
-                <h1 style={{ marginLeft: randomNumber(0, 15) + "rem" }}>{props.path.title}</h1>
-                <h3 style={{ marginLeft: randomNumber(0, 19) + "rem" }}>{props.path.year}</h3>
+                <h1 style={{ marginLeft: randomNumber(0, 14) + "rem" }}>{props.path.title}</h1>
+                <h3 style={{ marginLeft: randomNumber(0, 18) + "rem" }}>{props.path.year}</h3>
             </div>
         )
     } else {
