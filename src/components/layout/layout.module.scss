@@ -90,10 +90,6 @@ footer {
                     height: 2rem;
                 }
             }
-
-            .about-logo {
-                margin-top: 15vh;
-            }
         }
 
         .animated-logo {
@@ -179,18 +175,6 @@ footer {
 
             li{
                 z-index: 2;
-
-                &:hover {
-                    li:not(.logo) {
-                        margin: 0.5rem 0rem;
-                    }
-        
-                    .logo{
-                        video {
-                            height: 1.5rem;
-                        }
-                    }
-                }
             }
         }
 
@@ -210,6 +194,18 @@ footer {
             z-index: 2;
 
             background-color: black;
+
+            &:hover {
+                li:not(.logo) {
+                    margin: 0rem 0rem;
+                }
+    
+                .logo{
+                    video {
+                        height: 1.5rem;
+                    }
+                }
+            }
         }
 
         .logo {
