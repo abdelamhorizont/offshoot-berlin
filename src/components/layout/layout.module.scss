@@ -118,7 +118,7 @@ footer {
             video {
                 height    : 1.5rem;
                 transition: height 0.5s ease;
-                pointer-events: none;
+                // pointer-events: none;
             }
 
             &:hover {
