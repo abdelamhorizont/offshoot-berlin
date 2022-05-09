@@ -233,6 +233,8 @@ footer {
             display        : flex;
             justify-content: center;
 
+            pointer-events: auto;
+
             video {
                 pointer-events: none;
             }
@@ -254,6 +256,7 @@ footer {
 
             animation          : 0.5s ease 0.85s 1 slideInFromLeft;
             animation-fill-mode: both;
+            pointer-events: auto;
 
             video {
                 height             : 1.5rem;

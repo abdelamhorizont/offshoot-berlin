@@ -66,6 +66,8 @@
    .contact,
    .agb {
       // height: 80vh;
+      margin-top: 5vh;
+      display: block;
 
       * {
          width: 100%;
@@ -74,8 +76,8 @@
 
    .contact {
       div {
-         width  : calc(100vw - 2rem);
-         display: block;
+         width     : calc(100vw - 2rem);
+         display   : block;
          margin-top: 5rem;
 
          table {
@@ -86,7 +88,7 @@
 
             * {
                // display: inline;
-               width  : 100%;
+               width: 100%;
             }
          }
       }
@@ -96,28 +98,31 @@
 }
 
 @media screen and (min-width: 620px) {
+
    .about,
    .contact {
       * {
-         font-size     : $fontSize960M;
+         font-size: $fontSize960M;
       }
    }
 }
 
 @media screen and (min-width: 1400px) {
+
    .about,
    .contact {
       * {
-         font-size     : $fontSize1400M;
+         font-size: $fontSize1400M;
       }
    }
 }
 
 @media screen and (min-width: 2000px) {
+
    .about,
    .contact {
       * {
-         font-size     : $fontSize2000M;
+         font-size: $fontSize2000M;
       }
    }
 }
