@@ -66,12 +66,12 @@
    .contact,
    .agb {
       // height: auto;
-      overflow: hidden;
       margin-top: 5vh;
       display: block;
 
       * {
-         width: 100%;
+         width: 100%;      
+         overflow: hidden;
       }
    }
 
@@ -90,6 +90,8 @@
             * {
                // display: inline;
                width: 100%;
+               overflow: hidden;
+
             }
          }
       }
