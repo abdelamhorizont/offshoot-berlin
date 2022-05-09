@@ -65,7 +65,8 @@
    .about,
    .contact,
    .agb {
-      height: auto;
+      // height: auto;
+      overflow: hidden;
       margin-top: 5vh;
       display: block;
 
