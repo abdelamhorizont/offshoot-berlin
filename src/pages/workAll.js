@@ -70,12 +70,6 @@ export default function WorkAll() {
               ))
             }
           </ul>
-
-          <div style={{ marginRight: isShown ? "-200vw" : "-200vw", maxHeight: "90px" }} className={youtubeContainer}>
-            <video muted autoPlay loop webkit-playsinline="true" playsInline>
-              <source src={data.allContentfulAsset.nodes[0].file.url} type="video/mp4" />
-            </video>
-          </div>
         </div>
       </div>
 

@@ -83,7 +83,7 @@ query {
                                         setIndex(data.allContentfulProject.nodes.indexOf(node))
                                     }}
                                 >
-                                    <WorkTitle marg={true} path={node} />
+                                    <WorkTitle marg={true} path={node} isShown={isShown} />
                                 </li>
                             </Link>
                         ))
