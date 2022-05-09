@@ -6,7 +6,6 @@ import Layout from '../components/layout/layout'
 import { agb } from '../styles/about.module.scss'
 
 export default function AGB() {
-
   const data = useStaticQuery(graphql`
     query {
       allContentfulAgb {
