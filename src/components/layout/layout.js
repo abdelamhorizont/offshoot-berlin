@@ -20,6 +20,7 @@ const Layout = ( props ) => {
     `)
 
     const logoFile = data.allContentfulAsset.nodes[0].file.url
+    console.log(logoFile)
   
     const isBrowser = () => typeof window !== "undefined"
     const path = isBrowser() && window.location.pathname;
@@ -31,13 +32,13 @@ const Layout = ( props ) => {
                 <nav>
                     <div className={ulWrapper}>
                         <ul className={top}>
-                            <li><Link to="/workAll">Archive</Link></li>
-                            <li className={pageName == "/" ? animatedLogo  : logo }><Link to="/">
-                                <video muted autoplay loop webkit-playsinline playsinline>
+                            <li key="archive"><Link to="/workAll">Archive</Link></li>
+                            <li key="logo" className={pageName == "/" ? animatedLogo  : logo }><Link to="/">
+                                <video muted autoPlay loop webkit-playsinline="true" playsInline>
                                     <source src={logoFile} type="video/mp4" />
                                 </video>
                             </Link></li>
-                            <li><Link to="/about">About</Link></li>
+                            <li key="about"><Link to="/about">About</Link></li>
                         </ul>
                     </div>
                 </nav>
@@ -49,10 +50,10 @@ const Layout = ( props ) => {
 
             <footer>
                 <ul className={bottom}>
-                    <li><Link to="/contact">Contact</Link></li>
-                    <li><Link to="/imprint">Imprint</Link></li>
+                    <li key="contact"><Link to="/contact">Contact</Link></li>
+                    <li key="imprint"><Link to="/imprint">Imprint</Link></li>
                     {/* <li><Link to="/contact">DSVGO</Link></li> */}
-                    <li><Link to="/agb">AGB</Link></li>
+                    <li key="agb"><Link to="/agb">AGB</Link></li>
                 </ul>
             </footer>
         </div>

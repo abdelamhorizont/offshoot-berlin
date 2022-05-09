@@ -41,14 +41,6 @@ query {
           }
         }
       }
-      allContentfulAsset(filter: {title: {eq: "showreel"}}) {
-        nodes {
-          file {
-            url
-          }
-          title
-        }
-      }
 } 
 `)
 
@@ -86,7 +78,7 @@ query {
                     {
                         data.allContentfulProject.nodes.map(node => (
                             <Link to={`/${_.kebabCase(node.title)}`}>
-                                <li key={node.id}
+                                <li key={node.title}
                                     onMouseEnter={() => {
                                         setIndex(data.allContentfulProject.nodes.indexOf(node))
                                     }}
