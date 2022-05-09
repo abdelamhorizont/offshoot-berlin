@@ -33,7 +33,7 @@ const Layout = ( props ) => {
                         <ul className={top}>
                             <li><Link to="/workAll">Archive</Link></li>
                             <li className={pageName == "/" ? animatedLogo  : logo }><Link to="/">
-                                <video muted autoPlay loop webkit-playsinline playsinlinegit>
+                                <video muted autoPlay loop webkit-playsinline playsinline>
                                     <source src={logoFile} type="video/mp4" />
                                 </video>
                             </Link></li>
