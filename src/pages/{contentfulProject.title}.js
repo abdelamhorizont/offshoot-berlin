@@ -1,5 +1,10 @@
 import * as React from "react"
+import { useState, useRef, useCallback } from "react";
+
 import { graphql } from 'gatsby'
+
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
+import Vimeo from '@u-wave/react-vimeo';
 
 import Layout from '../components/layout/layout'
 import WorkTitle from '../components/workTitle/workTitle'
@@ -26,27 +31,85 @@ function videoUrl(url) {
 const Post = ({ data }) => {
 
   const videoSrc = videoUrl(data.contentfulProject.videoUrl)
+  const [paused, setPaused] = useState(true)
+  const [volume, setVolume] = useState(1)
+  const [time, setTime] = useState(0)
+  const videoPlayer = useRef();
+  const handle = useFullScreenHandle();
+
+  function handlePlayerPause() {
+    setPaused(true)
+  }
+
+  function handlePlayerPlay() {
+    setPaused(false)
+    // const videoPlayer = document.getElementById("videoPlayer")
+    console.log(videoPlayer)
+  }
+
+  function handleVolume(vol) {
+    setVolume(vol)
+  }
+
+  function handelTime(e) {
+    setTime(parseFloat(e.target.value))
+    console.log(time)
+  }
 
   return (
     <Layout>
       <div className={project}>
-        <WorkTitle marg={false}  path={data.contentfulProject} />
+        <WorkTitle marg={false} path={data.contentfulProject} />
 
-        <iframe
-          src={videoSrc}
-          title="project"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+        {
+          videoSrc.includes('vimeo') ?
+            <div>
+              <FullScreen handle={handle}>
+                <Vimeo 
+                  ref={videoPlayer}
+                  start={time}
+                  video={videoSrc}
+                  paused={paused}
+                  volume={volume}
+                  // onTimeUpdate={time}
+                />
+                {/* <button onClick={handlePlayerPlay}>play</button>
+                <button onClick={handlePlayerPause}>pause</button>
+
+                <button onClick={() => handleVolume(0)}>mute</button>
+                <button onClick={() => handleVolume(1)}>unmute</button>
+
+                <input
+                  type="range"
+                  value={time}
+                  min={0}
+                  max={10}
+                  step={0.01}
+                  onChange={handelTime}
+                />
+
+                <button onClick={handle.enter}>fullScreen</button>
+                <button onClick={handle.exit}>exit fullScreen</button> */}
+              </FullScreen>
+            </div>
+            :
+            <iframe
+              src={videoSrc}
+              title="project"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+        }
+
 
         <div className={text}>
           <div dangerouslySetInnerHTML={{ __html: data.contentfulProject.team && data.contentfulProject.team.childMarkdownRemark.html }} />
           <div dangerouslySetInnerHTML={{ __html: data.contentfulProject.text && data.contentfulProject.text.childMarkdownRemark.html }} />
         </div>
       </div>
-        {/* <Work /> */}
-        <ProjectList />
+      {/* <Work /> */}
+      <ProjectList />
     </Layout>
   )
 }
