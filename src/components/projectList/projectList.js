@@ -92,7 +92,7 @@ query {
                 
 
                 {data.allContentfulProject.nodes[index].videoPreview ?
-                    <div style={{ marginRight: isShown ? "0rem" : "-20rem", maxHeight: videoHeight, width : videoWidth }} className={youtubeContainer}>
+                    <div style={{ marginRight: isShown ? "0rem" : "-25rem", maxHeight: videoHeight, width : videoWidth }} className={youtubeContainer}>
                         <video key={data.allContentfulProject.nodes[index].videoPreview.file.url} ref={videoContainer} muted autoPlay loop webkit-playsinline="true" playsInline>
                             <source src={data.allContentfulProject.nodes[index].videoPreview.file.url} type="video/mp4" />
                         </video>

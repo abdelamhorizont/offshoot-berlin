@@ -73,7 +73,7 @@ const Post = ({ data }) => {
                   volume={volume}
                   // onTimeUpdate={time}
                 />
-                {/* <button onClick={handlePlayerPlay}>play</button>
+                <button onClick={handlePlayerPlay}>play</button>
                 <button onClick={handlePlayerPause}>pause</button>
 
                 <button onClick={() => handleVolume(0)}>mute</button>
@@ -89,7 +89,7 @@ const Post = ({ data }) => {
                 />
 
                 <button onClick={handle.enter}>fullScreen</button>
-                <button onClick={handle.exit}>exit fullScreen</button> */}
+                <button onClick={handle.exit}>exit fullScreen</button>
               </FullScreen>
             </div>
             :
