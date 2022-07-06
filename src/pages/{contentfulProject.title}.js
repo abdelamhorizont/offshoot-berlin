@@ -5,6 +5,7 @@ import { graphql } from 'gatsby'
 
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import Vimeo from '@u-wave/react-vimeo';
+import Player from '@vimeo/player';
 
 import Layout from '../components/layout/layout'
 import WorkTitle from '../components/workTitle/workTitle'
@@ -56,6 +57,13 @@ const Post = ({ data }) => {
     console.log(time)
   }
 
+  // const player = new Player('handstick', {
+  //   id: 562817173,
+  //   // url: videoSrc,
+  //   width: 640
+  // });
+
+
   return (
     <Layout>
       <div className={project}>
@@ -65,15 +73,15 @@ const Post = ({ data }) => {
           videoSrc.includes('vimeo') ?
             <div>
               <FullScreen handle={handle}>
-                <Vimeo 
+                <Vimeo
                   ref={videoPlayer}
                   start={time}
                   video={videoSrc}
                   paused={paused}
                   volume={volume}
-                  // onTimeUpdate={time}
+                // onTimeUpdate={time}
                 />
-                <button onClick={handlePlayerPlay}>play</button>
+                {/* <button onClick={handlePlayerPlay}>play</button>
                 <button onClick={handlePlayerPause}>pause</button>
 
                 <button onClick={() => handleVolume(0)}>mute</button>
@@ -89,7 +97,7 @@ const Post = ({ data }) => {
                 />
 
                 <button onClick={handle.enter}>fullScreen</button>
-                <button onClick={handle.exit}>exit fullScreen</button>
+                <button onClick={handle.exit}>exit fullScreen</button> */}
               </FullScreen>
             </div>
             :
