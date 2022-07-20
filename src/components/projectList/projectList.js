@@ -23,7 +23,6 @@ function videoUrl(url) {
     }
 }
 
-
 export default function ProjectList() {
     const data = useStaticQuery(graphql`
 query {
@@ -47,7 +46,7 @@ query {
     const [index, setIndex] = useState(0);
     const [isShown, setIsShown] = useState(false);
     const [videoWidth, setVideoWidth] = useState("0vw");
-    const [videoHeight, setVideoHeight] = useState("10vw");
+    const [videoHeight, setVideoHeight] = useState("3vw");
     const videoContainer = useRef(null);
     const ulContainer = useRef(null);
 
@@ -98,7 +97,7 @@ query {
                         </video>
                     </div>
                    : 
-                     <div style={{ marginRight: isShown ? "0vw" : "-35vw", marginLeft: isShown ? "5vw" : "0vw" }} className={youtubeContainer}> 
+                     <div style={{ marginRight: isShown ? "0vw" : "-25vw" }} className={youtubeContainer}> 
                         {/* <iframe
                             src={videoUrl(data.allContentfulProject.nodes[index].videoUrl)}
                             title="preview"

@@ -32,8 +32,14 @@
 }
 
 .animated {
-    display        : inline;
-    justify-content: space-between;
+    // display        : flex;
+    // flex-wrap: nowrap;
+    // justify-content: center;
+    // justify-content: space-between;
+    display: grid;
+    place-items: center;
+
+    // grid-template-columns: auto ;
 
     width    : calc(100vw - 2rem);
     font-size: $fontSizeM;
@@ -41,6 +47,7 @@
     opacity: 0;
     
     * {
+        display: block;
         margin    : 0rem 0.2rem;
         transition: margin 0.5s ease, font-style 0.5s ease;
     }
@@ -62,28 +69,33 @@
     -moz-animation-fill-mode: forwards;
 }
 
-// @function randomNum($min, $max) {
-//     $rand: random();
-//     $randomNum: $min + floor($rand * (($max - $min) + 1));
-
-//     @return $randomNum;
-//   }
-
 
 @media screen and (min-width: 620px) {
+    .work-title{
+        margin-bottom: 13rem;
+        // height: 10vh;
+    }
+
     .work-title, .animated {
-        display        : inline-flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        // display        : inline-flex;
+        // justify-content: space-between;
 
         width     : 100%;
         font-size : $fontSize960M;
         transition: font-size 0.5s ease;
 
         * {
-            display: flex;
-            display: -webkit-flex;
-            flex   : 1;
+            // display: grid;
+            // grid-template-columns: 1fr 1fr 1fr;
         }
+
+        // * {
+        //     display: flex;
+        //     display: -webkit-flex;
+        //     flex   : 1;
+        // }
 
         h3 {
             justify-content: end;
@@ -100,6 +112,7 @@
 }
 
 @media screen and (min-width: 1400px) {
+
     .work-title, .animated {
         font-size: $fontSize1400M;
     }

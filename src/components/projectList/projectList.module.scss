@@ -3,15 +3,17 @@
 @media screen and (max-width: 620px) {
    .work-container {
       margin: 1rem;
-      margin-top: 3rem;
-      padding-bottom: 10rem;
+      // margin-top: 3rem;
+      // padding-bottom: 10rem;
 
       height     : 90vh;
       width   : calc(100vw - 2rem);
       display    : flex;
       align-items: center;
+      overflow: hidden;
 
       .work {
+         margin-top: -3rem;
          display : flex;
          overflow: hidden;
 
@@ -52,9 +54,10 @@
       margin: 1rem;
       margin-top: -1rem;
 
-      height     : 90vh;
+      height     : 95vh;
       display    : flex;
       align-items: center;
+      overflow: hidden;
 
       .work {
          display : flex;
@@ -74,26 +77,18 @@
          .youtube-container {
             display: flex;
             justify-content: center;
-            // width: 200px;
             overflow           : hidden;
-            //   height        : 20%;
-            //   aspect-ratio  : 16/9;
             pointer-events     : none;
-
             transition: margin-right 0.7s ease;
 
             iframe {
-               /* Extend it beyond the viewport... */
                width      : 100%;
                height     : 200%;
-               /* ...and bring it back again */
                margin-top : -30%;
                margin-left: 0%;
             }
 
             video {
-               // display: flex;
-
                height     : 100%;
                // margin-left: 5rem;
             }
@@ -111,7 +106,6 @@
       }
 
       .youtube-container {
-         // display: inline;
          overflow           : hidden;
 
          iframe {
@@ -120,7 +114,7 @@
          }
 
          video {
-            height     : 100%;
+            // height     : 100%;
             // margin-left: 5rem;
          }
       }

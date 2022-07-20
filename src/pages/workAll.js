@@ -36,12 +36,10 @@ export default function WorkAll() {
   const [videoHeight, setVideoHeight] = useState("10vw");
   const ulContainer = useRef(null);
 
-
   React.useEffect(() => {
     const isBrowser = () => typeof window !== "undefined"
     isBrowser() && window.addEventListener('load', handleLoad())
   }, []);
-
 
   const handleLoad = () => {
     setVideoHeight(ulContainer.current.offsetHeight + "px")

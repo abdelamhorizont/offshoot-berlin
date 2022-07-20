@@ -30,10 +30,6 @@ footer {
         overflow  : auto;
         display   : block;
         transition: height 0.5s ease;
-
-        &:hover {
-            height: 4vh;
-        }
     }
 
     ul {
@@ -46,7 +42,7 @@ footer {
         position: fixed;
         z-index : 2;
 
-        background-color: black;
+        // background-color: black;
 
         width  : calc(100vw - 3rem);
         padding: 1.5rem;
@@ -58,10 +54,14 @@ footer {
             -webkit-flex: 1;
             flex        : 1;
 
-            font-size  : $fontSizeS;
-            line-height: 0rem;
-            transition : margin 0.5s ease;
+            font-size     : $fontSizeS;
+            // line-height: 0rem;
+            transition    : margin 0.5s ease;
 
+            &:hover {
+                // margin: 0.5rem 0rem;
+                font-style: italic;
+            }
         }
 
         li:last-child {
@@ -73,91 +73,68 @@ footer {
             justify-content        : center;
             -webkit-justify-content: center;
         }
+    }
 
-        &:hover {
-            li:not(.logo) {
-                margin: 0.5rem 0rem;
-            }
+    .animated-logo {
+        margin-top         : -0.5rem;
+        animation          : 0.5s ease 0.85s 1 slideInFromLeft;
+        animation-fill-mode: both;
 
-            .logo {
-                video {
-                    height: 2rem;
-                }
-            }
-
-            .animated-logo {
-                video {
-                    height: 2rem;
-                }
-            }
-        }
-
-        .animated-logo {
-            margin-top         : -0.5rem;
-            animation          : 0.5s ease 0.85s 1 slideInFromLeft;
+        video {
+            // height             : 1.2rem;
+            animation          : 0.5s ease 0.75s 1 scale;
             animation-fill-mode: both;
 
-            video {
-                height             : 1.5rem;
-                animation          : 0.5s ease 0.75s 1 scale;
-                animation-fill-mode: both;
+            transition: height 0.5s ease;
+        }
+    }
 
-                transition: height 0.5s ease;
-            }
+    .logo {
+        margin-top: -0.5rem;
 
-            &:hover {
-                video {
-                    height: 2rem;
-                }
-            }
+        video {
+            height        : 1.1rem;
+            transition    : height 0.5s ease;
+            pointer-events: none;
         }
 
-        .logo {
-            margin-top: -0.5rem;
-
+        &:hover {
             video {
-                height    : 1.5rem;
-                transition: height 0.5s ease;
-                pointer-events: none;
-            }
-
-            &:hover {
-                video {
-                    height: 2rem;
-                }
-            }
-        }
-
-        .about-logo {
-            margin-top: 15vh;
-
-            video {
-                height       : 2rem;
-                pointer-events: none;
-                // transition: height 0.5s ease;
-            }
-
-            &:hover {
-                video {
-                    height: 2rem;
-                }
+                height: 2rem;
             }
         }
     }
 
+    .about-logo {
+        margin-top: 15vh;
+
+        video {
+            height        : 1.1rem;
+            pointer-events: none;
+            // transition: height 0.5s ease;
+        }
+
+        &:hover {
+            video {
+                height: 3rem;
+            }
+        }
+    }
+    
     ul.top {
-        top             : 0rem;
-        padding-bottom  : 0.5rem;
-        background-color: black;
+        top           : 0rem;
+        padding-bottom: 0.5rem;
+    
         // z-index: 2;
     }
-
+    
     ul.bottom {
         bottom     : 0rem;
         padding-top: 0.8rem;
         // z-index: 2;
     }
 }
+
 
 @media screen and (max-width: 620px) {
 
@@ -171,13 +148,13 @@ footer {
         }
 
         ul.top {
-            display        : flex;
-            display        : -webkit-flex;
-            justify-content: center;
+            display            : flex;
+            display            : -webkit-flex;
+            justify-content    : center;
+            // background-color: black;
 
-            height     : 4rem;
-            top        : calc(100vh - 4.5rem);
-            padding-top: 1rem;
+            // top        : calc(100vh - 4.5rem);
+            padding-top: 1.6rem;
             text-align : center;
             // z-index: 2;
 
@@ -201,36 +178,30 @@ footer {
             justify-content: -webkit-center;
             z-index        : 2;
 
-            background-color: black;
 
-            &:hover {
-                li:not(.logo) {
-                    margin: 0rem 0rem;
-                }
-
-                .logo {
-                    video {
-                        height: 1.5rem;
-                    }
-                }
-
-                .animated-logo {
-                    video {
-                        height: 1.5rem;
-                    }
-                }
+            li {
+                line-height: 0rem;
             }
+
+            a {
+                background-color: black;
+                box-shadow      : 0px 0px 10px 12px rgba(0, 0, 0, 1);
+                text-shadow     : 0px 0px 50px rgba(0, 0, 0, 1);
+                border-radius   : 8rem;
+            }
+
         }
 
         .logo {
-            position        : fixed;
-            background-color: black;
-            top             : 0rem;
-            left            : 0rem;
+            position           : fixed;
+            // background-color: black;
+
+            top : 0rem;
+            left: 0rem;
 
             width          : 100vw;
             padding-top    : 1.5rem;
-            padding-bottom : 0.5rem;
+            padding-bottom : 1.5rem;
             overflow       : hidden;
             display        : flex;
             justify-content: center;
@@ -238,7 +209,11 @@ footer {
             pointer-events: auto;
 
             video {
-                pointer-events: none;
+                height          : 1.2rem;
+                pointer-events  : none;
+                background-color: black;
+                // box-shadow: 0px 0px 10px 15px rgba(0, 0, 0, 0.9);
+                border-radius   : 8rem;
             }
 
         }
@@ -258,16 +233,15 @@ footer {
 
             animation          : 0.5s ease 0.85s 1 slideInFromLeft;
             animation-fill-mode: both;
-            pointer-events: auto;
+            pointer-events     : auto;
 
             video {
-                height             : 1.5rem;
+                height             : 1.2rem;
                 animation          : 0.5s ease 0.75s 1 scale;
                 animation-fill-mode: both;
 
                 pointer-events: none;
-
-                transition: height 0.5s ease;
+                transition    : height 0.5s ease;
             }
         }
     }
@@ -279,15 +253,24 @@ footer {
     footer {
         .ul-wrapper {
             height: 2.7rem;
-
-            &:hover {
-                height: 7.5vh;
-            }
         }
 
         ul {
+            background-color: transparent;
+
+            ul.top {
+                // background-color: transparent;
+            }
+
             li {
                 font-size: $fontSize960S;
+            }
+
+            a {
+                background-color: black;
+                box-shadow      : 0px 0px 10px 5px rgba(0, 0, 0, 0.9);
+                text-shadow     : 0px 0px 50px rgba(0, 0, 0, 0.7);
+                border-radius   : 8rem;
             }
 
             .logo {
@@ -304,25 +287,6 @@ footer {
                 }
             }
 
-            &:hover {
-
-                .logo {
-                    video {
-                        height: 1.5rem;
-                    }
-                }
-
-                .animated-logo {
-                    video {
-                        height: 1.5rem;
-                    }
-                }
-
-                .about-logo {
-                    margin-top: 15vh;
-                }
-            }
-
         }
     }
 }
@@ -333,10 +297,6 @@ footer {
     footer {
         .ul-wrapper {
             height: 2.9rem;
-
-            &:hover {
-                height: 7.5vh;
-            }
         }
 
         ul {
@@ -348,6 +308,13 @@ footer {
                 video {
                     height: 1.3rem;
                 }
+
+                &:hover {
+                    video {
+                        height: 1.6rem;
+                    }
+                }
+
             }
 
             .animated-logo {
@@ -356,17 +323,8 @@ footer {
                     animation          : 0.5s ease 0.75s 1 scale;
                     animation-fill-mode: both;
                 }
-            }
 
-            &:hover {
-
-                .logo {
-                    video {
-                        height: 1.6rem;
-                    }
-                }
-
-                .animated-logo {
+                &:hover {
                     video {
                         height: 1.6rem;
                     }
@@ -384,10 +342,6 @@ footer {
 
         .ul-wrapper {
             height: 2.9rem;
-
-            &:hover {
-                height: 3.5rem;
-            }
         }
 
         ul {

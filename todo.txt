@@ -1,3 +1,11 @@
-- custom video controls
-- video auf landing page schaut rein bei preload
-- Hovereffekt Grün
+- video controls:
+   x video on mobile
+   x play when click on video
+   - smooth transition
+   x fullscreen: visible on mousemove
+   - fullScreen hide cursor
+   x keyboard controls
+- video sometimes visible on lamding page
+- Korrekturen 
+   x workTitle hover random Margin
+x team random margin mobile   
