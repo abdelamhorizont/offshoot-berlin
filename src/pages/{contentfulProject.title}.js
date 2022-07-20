@@ -206,7 +206,8 @@ const Post = ({ data }) => {
                     width="100%"
                     height={fullScreen ? "100vh" : monitor ? "82vh" : fullhd ? "78vh" : macBook ? "71vh" : mobile ? "50vh" : "25vh"}
                   />
-                  <button onClick={() => setPaused(!paused)} style={{ opacity: paused ? "0" : "1" }}> <PlayIcon /> </button>
+                  <button onClick={handlePlayerPlay} style={{ display: paused ? "none" : "inline" }}> <PlayIcon /> </button>
+                  <button onClick={handlePlayerPause}  style={{ display: !paused ? "none" : "inline" }}>  </button>
                 </div>
 
                 <div className={controlsContainer} onMouseEnter={handleMouseMove} style={{ position: fullScreen ? "absolute" : "relative", bottom: fullScreen && "0", opacity: fullScreen && mouseMoved ? "1" : fullScreen ? "0" : "1" }}>
