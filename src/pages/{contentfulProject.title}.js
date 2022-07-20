@@ -57,6 +57,7 @@ function randomNumber(min, max) { // min and max included
   )
 }
 
+
 const Post = ({ data }) => {
 
   const videoSrc = videoUrl(data.contentfulProject.videoUrl)
@@ -69,6 +70,23 @@ const Post = ({ data }) => {
   const [fullScreen, setFullScreen] = useState(false)
   const [mouseMoved, setMouseMoved] = useState(false)
   const handle = useFullScreenHandle();
+
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     window.addEventListener("keydown", handlePauseKey)
@@ -157,12 +175,12 @@ const Post = ({ data }) => {
 
   const isBrowser = () => typeof window !== "undefined"
 
-  const mobile = isBrowser() && window.screen.width > 620 ? true : false
-  const macBook = isBrowser() && window.screen.width > 920 ? true : false
-  const fullhd = isBrowser() && window.screen.width > 1700 ? true : false
-  const monitor = isBrowser() && window.screen.width > 2000 ? true : false
-  console.log(mobile, macBook, fullhd, monitor)
-
+  const mobile = isBrowser() && windowSize.width > 620 ? true : false
+  const macBook = isBrowser() && windowSize.width > 920 ? true : false
+  const fullhd = isBrowser() && windowSize.width > 1700 ? true : false
+  const monitor = isBrowser() && windowSize.width > 2000 ? true : false
+  console.log(mobile)
+  
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
@@ -201,7 +219,7 @@ const Post = ({ data }) => {
                     }}
                     style={{ cursor: mouseMoved ? "auto" : "none" }}
                     width="100%"
-                    height={fullScreen ? "100vh" : monitor ? "82vh" : fullhd ? "78vh" : macBook ? "71vh" : mobile ? "50vh" : "95vh"}
+                    height={fullScreen ? "100vh" : monitor ? "82vh" : fullhd ? "78vh" : macBook ? "71vh" : mobile ? "50vh" : "35vh"}
                   />
                   <button onClick={handlePlayerPlay} style={{ display: paused ? "none" : "inline" }}> <PlayIcon /> </button>
                   <button onClick={handlePlayerPause} style={{ display: !paused ? "none" : "inline" }}>  </button>

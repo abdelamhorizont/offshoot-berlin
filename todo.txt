@@ -9,3 +9,5 @@
 - Korrekturen 
    x workTitle hover random Margin
 x team random margin mobile   
+- videogröße nach reload
+- safari freeze
