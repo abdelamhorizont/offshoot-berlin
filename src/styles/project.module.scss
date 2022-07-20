@@ -92,9 +92,24 @@
       /* Otherwise white in Chrome */
     }
 
+    // input[type=range]::-webkit-slider-thumb {
+    //   -webkit-appearance: none;
+    //   height          : 0.8rem;
+    //   // border-radius   : 1rem;
+    //   border          : 0px solid #ffffff;
+    //   background      : transparent;
+    //   cursor          : pointer;
+    //   transition      : 0.4s all ease;
+    // }
     input[type=range]::-webkit-slider-thumb {
       -webkit-appearance: none;
-    }
+      border: none;
+      height: 0.8rem;
+      width: 0.8rem;
+      border-radius: 50%;
+      background: white;
+      margin-top: -5px;
+  }
 
     input[type=range]:focus {
       outline: none;
@@ -103,7 +118,6 @@
 
     input[type=range]::-moz-range-thumb {
       height          : 0.8rem;
-      // width        : 1rem;
       border-radius   : 1rem;
       border          : 0px solid #ffffff;
       background      : #ffffff;
