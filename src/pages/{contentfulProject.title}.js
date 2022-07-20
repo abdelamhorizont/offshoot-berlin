@@ -85,7 +85,7 @@ const Post = ({ data }) => {
 
   function handleMouseMove() {
     setMouseMoved(true)
-    setTimeout(() => setMouseMoved(false), 4000);
+    setTimeout(() => setMouseMoved(false), 3000);
   }
 
   function handlePauseKey(e) {
@@ -210,7 +210,7 @@ const Post = ({ data }) => {
                   <button onClick={handlePlayerPause}  style={{ display: !paused ? "none" : "inline" }}>  </button>
                 </div>
 
-                <div className={controlsContainer} onMouseEnter={handleMouseMove} style={{ position: fullScreen ? "absolute" : "relative", bottom: fullScreen && "0", opacity: fullScreen && mouseMoved ? "1" : fullScreen ? "0" : "1" }}>
+                <div className={controlsContainer} onMouseEnter={handleMouseMove} style={{ position: fullScreen ? "absolute" : "relative", bottom: fullScreen && "0", opacity: fullScreen && mouseMoved ? "1" : fullScreen && !paused ? "1" : fullScreen ? "0" : "1" }}>
                   <div className={controls} style={{ width: fullScreen ? "100vw" : "calc(100vw - 2rem)" }}>
                     <button onClick={handlePlayerPlay} style={{ display: paused ? "none" : "inline" }}> <PlayIcon /> </button>
                     <button onClick={handlePlayerPause} style={{ display: !paused ? "none" : "inline" }}> <PauseIcon /></button>
