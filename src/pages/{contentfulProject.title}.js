@@ -155,19 +155,16 @@ const Post = ({ data }) => {
     }
   }
 
-
-
   const isBrowser = () => typeof window !== "undefined"
-  var path = isBrowser() && window.location.pathname;
 
   const mobile = isBrowser() && window.screen.width > 620 ? true : false
   const macBook = isBrowser() && window.screen.width > 920 ? true : false
   const fullhd = isBrowser() && window.screen.width > 1700 ? true : false
   const monitor = isBrowser() && window.screen.width > 2000 ? true : false
+  console.log(mobile, macBook, fullhd, monitor)
 
   const [index, setIndex] = useState(0)
-  // const [marginClient, setMarginClient] = useState([])  
-  // const index = 0  
+
   useEffect(() => {
     setIndex(document.getElementsByTagName("table") && document.getElementsByTagName("table")[0].children[1].children.length)
   }, [])
@@ -202,12 +199,12 @@ const Post = ({ data }) => {
                       videoPlayer.current.seekTo(0)
                       handlePlayerPause()
                     }}
-                    style={{cursor: mouseMoved ? "auto" : "none"}}
+                    style={{ cursor: mouseMoved ? "auto" : "none" }}
                     width="100%"
-                    height={fullScreen ? "100vh" : monitor ? "82vh" : fullhd ? "78vh" : macBook ? "71vh" : mobile ? "50vh" : "25vh"}
+                    height={fullScreen ? "100vh" : monitor ? "82vh" : fullhd ? "78vh" : macBook ? "71vh" : mobile ? "50vh" : "95vh"}
                   />
                   <button onClick={handlePlayerPlay} style={{ display: paused ? "none" : "inline" }}> <PlayIcon /> </button>
-                  <button onClick={handlePlayerPause}  style={{ display: !paused ? "none" : "inline" }}>  </button>
+                  <button onClick={handlePlayerPause} style={{ display: !paused ? "none" : "inline" }}>  </button>
                 </div>
 
                 <div className={controlsContainer} onMouseEnter={handleMouseMove} style={{ position: fullScreen ? "absolute" : "relative", bottom: fullScreen && "0", opacity: fullScreen && mouseMoved ? "1" : fullScreen && !paused ? "1" : fullScreen ? "0" : "1" }}>
@@ -256,7 +253,7 @@ const Post = ({ data }) => {
                       <tr>
                         <td>{domNode.children[1].children[0] && domNode.children[1].children[0].data}</td>
                         {/* <td style={{ paddingLeft: marginClient[domNode.parent.children.indexOf(domNode)] + "vw"  }}>{domNode.children[3].children[0] && domNode.children[3].children[0].data}</td> */}
-                        <td style={{ paddingLeft: !mobile ? marginMobile[domNode.parent.children.indexOf(domNode)] + "vw" : marginClient[domNode.parent.children.indexOf(domNode)] + "vw" }}>{domNode.children[3].children[0] && domNode.children[3].children[0].data}</td>
+                        <td style={{ paddingLeft: !mobile ? 0 + "vw" : marginClient[domNode.parent.children.indexOf(domNode)] + "vw" }}>{domNode.children[3].children[0] && domNode.children[3].children[0].data}</td>
                       </tr>
                     )
                   }

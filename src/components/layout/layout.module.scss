@@ -216,6 +216,12 @@ footer {
                 border-radius   : 8rem;
             }
 
+            &:hover {
+                video {
+                    height: 1.2rem;
+                }
+            }
+
         }
 
         .animated-logo {
@@ -229,7 +235,7 @@ footer {
             display         : flex;
             justify-content : center;
             justify-content : -webkit-center;
-            background-color: black;
+            background-color: transparent;
 
             animation          : 0.5s ease 0.85s 1 slideInFromLeft;
             animation-fill-mode: both;
@@ -242,6 +248,12 @@ footer {
 
                 pointer-events: none;
                 transition    : height 0.5s ease;
+            }
+
+            &:hover {
+                video {
+                    height: 1.2rem;
+                }
             }
         }
     }
