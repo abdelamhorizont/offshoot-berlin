@@ -184,7 +184,7 @@ const Post = ({ data }) => {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
-    setIndex(document.getElementsByTagName("table") && document.getElementsByTagName("table")[0].children[1].children && document.getElementsByTagName("table")[0].children[1] && document.getElementsByTagName("table")[0].children[1].children.length)
+    setIndex(document.getElementsByTagName("table") && document.getElementsByTagName("table")[0].children[1].children && document.getElementsByTagName("table")[0].children && document.getElementsByTagName("table")[0].children[1].children.length)
   }, [])
 
   const marginClient = React.useMemo(() => [...Array(100)].map(() => randomNumber(1, 10)), [])
