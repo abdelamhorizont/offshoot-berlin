@@ -179,8 +179,7 @@ const Post = ({ data }) => {
   const macBook = isBrowser() && windowSize.width > 920 ? true : false
   const fullhd = isBrowser() && windowSize.width > 1700 ? true : false
   const monitor = isBrowser() && windowSize.width > 2000 ? true : false
-  console.log(mobile)
-  
+
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
@@ -251,13 +250,17 @@ const Post = ({ data }) => {
               </FullScreen>
             </div>
             :
-            <iframe
-              src={videoSrc}
-              title="project"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
+            <>
+              <iframe
+                src={videoSrc}
+                title="project"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+              <WorkTitle marg={false} path={data.contentfulProject} />
+            </>
+
         }
 
 
