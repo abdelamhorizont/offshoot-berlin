@@ -67,6 +67,7 @@ footer {
         li:last-child {
             justify-content        : end;
             -webkit-justify-content: flex-end;
+            z-index: 3;
         }
 
         li:not(:first-child, :last-child) {
@@ -95,7 +96,6 @@ footer {
         video {
             height        : 1.1rem;
             transition    : height 0.5s ease;
-            pointer-events: none;
         }
 
         &:hover {
@@ -120,14 +120,14 @@ footer {
             }
         }
     }
-    
+
     ul.top {
         top           : 0rem;
         padding-bottom: 0.5rem;
-    
+
         // z-index: 2;
     }
-    
+
     ul.bottom {
         bottom     : 0rem;
         padding-top: 0.8rem;
@@ -206,11 +206,12 @@ footer {
             display        : flex;
             justify-content: center;
 
-            pointer-events: auto;
+            pointer-events: none;
 
             video {
+                pointer-events: auto;
+
                 height          : 1.2rem;
-                pointer-events  : none;
                 background-color: black;
                 // box-shadow: 0px 0px 10px 15px rgba(0, 0, 0, 0.9);
                 border-radius   : 8rem;
@@ -239,14 +240,14 @@ footer {
 
             animation          : 0.5s ease 0.85s 1 slideInFromLeft;
             animation-fill-mode: both;
-            pointer-events     : auto;
+            pointer-events     : none;
 
             video {
                 height             : 1.2rem;
                 animation          : 0.5s ease 0.75s 1 scale;
                 animation-fill-mode: both;
 
-                pointer-events: none;
+                pointer-events: auto;
                 transition    : height 0.5s ease;
             }
 
