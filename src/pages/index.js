@@ -9,6 +9,7 @@ import ProjectList from '../components/projectList/projectList'
 import '../styles/reset.scss'
 import '../styles/global.scss'
 import '../styles/typo.module.scss'
+import '../styles/cookies.module.scss'
 
 export default function Home({ location }) {
 

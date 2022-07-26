@@ -1,8 +1,10 @@
+@import "./typo.module.scss";
+
 @font-face {
     font-family: "PPNeueMontreal";
-    src: url('../assets/PPNeueMontreal-Regular.woff');
+    src        : url('../assets/PPNeueMontreal-Regular.woff');
     // src: url('../assets/PPNeueMontreal-Italic.woff');
-}  
+}
 
 @keyframes opa {
     0% {
@@ -14,61 +16,89 @@
     }
 }
 
-html{
+html {
     background-color: black;
-    scroll-behavior: smooth;
+    scroll-behavior : smooth;
     // cursor: none;
 
     ::selection {
-        text-shadow: 0px 0px 20px rgb(0, 255, 42);    
-        color: rgb(0, 255, 42);    
+        text-shadow: 0px 0px 20px rgb(0, 255, 42);
+        color      : rgb(0, 255, 42);
     }
-    
-    .cookies{
-        width: 100%;
+
+    .cookies {
+        width          : 100%;
         justify-content: center;
     }
-    
+
 }
 
-.container{
-    display: inline-flex;
+.container {
+    display        : inline-flex;
     justify-content: center;
+    align-items: center;
 
     background-color: white;
-    padding: 0.5rem;
-    border-radius: 1rem;
+    padding         : 0.5rem;
+    border-radius   : 1rem;
 
     opacity: 0;
 
-    p{
-        color: black;
-        line-height:normal;
+    p {
+        color      : black;
+        line-height: normal;
+        font-size: $fontSizeS;
     }
 
-    .btn{
+    .btn {
         margin-left: 1rem;
-        margin-top: -0.1rem;
-        padding: 0.2rem  0.5rem;
+        margin-top : -0.1rem;
+        padding    : 0.2rem 0.5rem;
 
         background-color: black;
-        color: white;
-        outline: inherit;
-        border: 1px;
-        border-radius: 0.8rem;
+        color           : white;
+        outline         : inherit;
+        border          : 1px;
+        border-radius   : 0.8rem;
+        font-size: $fontSizeS;
 
-        &:hover{
+        &:hover {
             font-style: italic;
-        }   
+        }
     }
 
-    animation-name: opa;
+    animation-name    : opa;
     animation-duration: 0.3s;
 
-    animation-delay: 1s;
+    animation-delay     : 1s;
     -moz-animation-delay: 1s;
 
-    animation-fill-mode: forwards;
+    animation-fill-mode     : forwards;
     -moz-animation-fill-mode: forwards;
-    
+
 }
+
+@media screen and (min-width: 620px) {
+    .container {
+        p {
+            font-size: $fontSize960S;
+            align-self: center;
+            line-height: normal;
+
+        }
+        .btn {
+            font-size: $fontSize960S;
+            margin-top : -0.3rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        p {
+            font-size: $fontSize1400S;
+        }
+    }
+}
+
+@media screen and (min-width: 2000px) {}
