@@ -70,7 +70,7 @@
 }
 
 
-@media screen and (min-width: 620px) {
+@media screen and (min-width: 720px) {
     .work-title{
         margin-bottom: 13rem;
         // height: 10vh;
@@ -100,7 +100,7 @@
         h3 {
             justify-content: end;
             -webkit-justify-content: flex-end;
-
+            transition: opacity 0.1s ease;
         }
 
         h1 {

@@ -15,7 +15,7 @@ function randomNumber(min, max) { // min and max included
 const isBrowser = () => typeof window !== "undefined"
 var path = isBrowser() && window.location.pathname;
 
-const mobile = isBrowser() && window.screen.width < 620 ? true : false
+const mobile = isBrowser() && window.screen.width < 720 ? true : false
 const macBook = isBrowser() && window.screen.width > 1400 ? true : false
 const monitor = isBrowser() && window.screen.width > 2000 ? true : false
 
@@ -26,10 +26,10 @@ export default function WorkTitle(props) {
     // var page = path.split("/").pop();
     var page = "";
 
-    const mobile = isBrowser() && window.screen.width < 620 ? true : false
+    const mobile = isBrowser() && window.screen.width < 720 ? true : false
     const marginClient = React.useMemo(() => randomNumber(0, 13), [])
     const marginTitle = React.useMemo(() => randomNumber(-6, 6), [])
-    const marginYear = React.useMemo(() => monitor ? randomNumber(10, 30) : randomNumber(3, 8), [])
+    const marginYear = React.useMemo(() => monitor ? randomNumber(3, 30) : randomNumber(3, 18), [])
     const marginMobile = React.useMemo(() => randomNumber(-40, 40), [])
 
 
@@ -38,22 +38,21 @@ export default function WorkTitle(props) {
             <div className={page == "" ? animated : workTitle}>
                 <h2 style={{ marginLeft: 0 + "vw" }}>{props.path.client}</h2>
                 <h1 style={{ marginLeft: 0 + "vw" }}>{props.path.title}</h1>
-                <h3 style={{ marginLeft: marginMobile + "vw" }}>{props.path.year}</h3>
+                <h3 style={{ marginLeft: marginMobile + "vw", opacity: props.isShown ? "1" : "1" }}>{props.path.year}</h3>
             </div>
         )
     } else {
         return (
-            <div className={page == "" ? animated : workTitle}  >
-                <h2 style={props.marg === true ? { marginLeft: marginClient + "rem" } : { marginLeft: 3 + "vw" }}>{props.path.client}</h2>
+            <div className={page == "" ? animated : workTitle}>
+                <h2 style={props.marg === true ? { marginLeft: marginClient + "rem" } : { marginLeft: 1 + "vw" }}>{props.path.client}</h2>
                 <h1 style={props.marg === true ? { marginLeft: marginTitle + "rem" } : { marginLeft: 0 + "vw" }}>{props.path.title}</h1>
                 {props.marg ?
-                    <h3 style={props.isShown === true ? { marginRight: marginYear + "rem" } : { marginRight: marginClient + "rem" }}>{props.path.year}</h3>
+                    <h3 style={{opacity: props.isShown && !mobile? "0"  :  "1", marginRight: marginYear + "rem" }}>{props.path.year}</h3>
                     :
-                    <h3 style={{ marginRight: 3 + "vw" }}>{props.path.year}</h3>
+                    <h3 style={{ marginRight: 1 + "vw" }}>{props.path.year}</h3>
                 }
             </div>
         )
     }
-
 }
 
