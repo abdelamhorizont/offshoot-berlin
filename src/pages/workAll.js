@@ -32,30 +32,11 @@ export default function WorkAll() {
   } 
   `)
 
-  const [isShown, setIsShown] = useState(false);
-  const [videoHeight, setVideoHeight] = useState("10vw");
-  const ulContainer = useRef(null);
-
-  React.useEffect(() => {
-    const isBrowser = () => typeof window !== "undefined"
-    isBrowser() && window.addEventListener('load', handleLoad())
-  }, []);
-
-  const handleLoad = () => {
-    setVideoHeight(ulContainer.current.offsetHeight + "px")
-  }
-
   return (
     <Layout>
       <div className={workContainer}>
-        <div className={work}
-          onMouseEnter={() => {
-            setIsShown(true)
-            setVideoHeight(ulContainer.current.offsetHeight + "px")
-          }}
-          onMouseLeave={() => setIsShown(false)}
-        >
-          <ul ref={ulContainer}>
+        <div className={work}>
+          <ul style={{marginTop: "-7vh"}}>
             {
               data.allContentfulProject.nodes.map(node => (
                 <Link to={`/${_.kebabCase(node.title)}`}>

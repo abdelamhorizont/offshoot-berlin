@@ -18,7 +18,6 @@ export default function Home({ location }) {
       <Layout path={location.pathname}>
         <ProjectList />
 
-        {/* <div className={cookiesContainer}> */}
         <div className="cookies" style={{ position: "fixed", bottom: "8vh", display: "inline-flex", justifyContent: "center" }}>
           <CookieNotice
             personalizeButtonClasses={"my-btn-classes"}
