@@ -65,11 +65,11 @@
 
     display              : grid;
     grid-template-columns: auto auto 1fr auto auto;
-    gap                  : 0.2rem;
+    gap                  : 1rem;
 
     align-items  : center;
     justify-items: flex-end;
-    margin-bottom: 1rem;
+    margin: 1rem 0rem;
 
 
     :not(input[type=range]) {

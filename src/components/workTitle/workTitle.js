@@ -44,12 +44,12 @@ export default function WorkTitle(props) {
     } else {
         return (
             <div className={page == "" ? animated : workTitle}>
-                <h2 style={props.marg === true ? { marginLeft: marginClient + "rem" } : { marginLeft: 1 + "vw" }}>{props.path.client}</h2>
+                <h2 style={props.marg === true ? { marginLeft: marginClient + "rem" } : { marginLeft: 0.2 + "vw" }}>{props.path.client}</h2>
                 <h1 style={props.marg === true ? { marginLeft: marginTitle + "rem" } : { marginLeft: 0 + "vw" }}>{props.path.title}</h1>
                 {props.marg ?
                     <h3 style={{opacity: props.isShown && !mobile? "0"  :  "1", marginRight: marginYear + "rem" }}>{props.path.year}</h3>
                     :
-                    <h3 style={{ marginRight: 1 + "vw" }}>{props.path.year}</h3>
+                    <h3 style={{ marginRight: 0.5 + "vw" }}>{props.path.year}</h3>
                 }
             </div>
         )

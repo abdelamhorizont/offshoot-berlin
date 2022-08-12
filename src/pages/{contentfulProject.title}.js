@@ -224,8 +224,8 @@ const Post = ({ data }) => {
                   <button onClick={handlePlayerPause} style={{ display: !paused ? "none" : "inline" }}>  </button>
                 </div>
 
-                <div className={controlsContainer} onMouseEnter={handleMouseMove} style={{ position: fullScreen ? "absolute" : "relative", bottom: fullScreen && "0", opacity: fullScreen && mouseMoved ? "1" : fullScreen && !paused ? "1" : fullScreen ? "0" : "1" }}>
-                  <div className={controls} style={{ width: fullScreen ? "100vw" : "calc(100vw - 2rem)" }}>
+                <div className={controlsContainer} onMouseEnter={handleMouseMove} style={{ position: fullScreen ? "absolute" : "relative", bottom: fullScreen && "0", opacity: fullScreen && mouseMoved ? "1" : fullScreen && !paused ? "1" : fullScreen ? "0" : "1", padding:"1rem" }}>
+                  <div className={controls} style={{ width: fullScreen ?  "calc(100vw - 2rem)" : "calc(100vw - 2rem)" }}>
                     <button onClick={handlePlayerPlay} style={{ display: paused ? "none" : "inline" }}> <PlayIcon /> </button>
                     <button onClick={handlePlayerPause} style={{ display: !paused ? "none" : "inline" }}> <PauseIcon /></button>
 
@@ -273,7 +273,6 @@ const Post = ({ data }) => {
                     return (
                       <tr>
                         <td>{domNode.children[1].children[0] && domNode.children[1].children[0].data}</td>
-                        {/* <td style={{ paddingLeft: marginClient[domNode.parent.children.indexOf(domNode)] + "vw"  }}>{domNode.children[3].children[0] && domNode.children[3].children[0].data}</td> */}
                         <td style={{ paddingLeft: !mobile ? 0 + "vw" : marginClient[domNode.parent.children.indexOf(domNode)] + "vw" }}>{domNode.children[3].children[0] && domNode.children[3].children[0].data}</td>
                       </tr>
                     )
@@ -283,12 +282,10 @@ const Post = ({ data }) => {
             }
           </div>
 
-          {/* <div dangerouslySetInnerHTML={{ __html: data.contentfulProject.team && data.contentfulProject.team.childMarkdownRemark.html }} /> */}
           <div className={projectText} dangerouslySetInnerHTML={{ __html: data.contentfulProject.text && data.contentfulProject.text.childMarkdownRemark.html }} />
 
         </div>
       </div>
-      {/* <Work /> */}
       <ProjectList />
     </Layout>
   )
