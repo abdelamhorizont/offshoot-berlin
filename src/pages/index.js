@@ -31,23 +31,24 @@ export default function Home({ location }) {
 
   React.useEffect(() => {
     const isBrowser = () => typeof window !== "undefined"
-     setMobile(isBrowser() && window.screen.width < 720)
+    setMobile(isBrowser() && window.screen.width < 720)
   }, []);
 
 
   const background = data.allContentfulAsset.nodes[0]
-  console.log(mobile);
 
   return (
     <div>
       <Layout path={location.pathname}>
         <ProjectList />
 
-        <div className={!mobile? "background" : "mobile-background"}>
-          <video muted autoPlay loop webkit-playsinline="true" playsInline>
-            <source src={background.file.url} type="video/mp4" />
-          </video>
-        </div>
+        {background &&
+          <div className={!mobile ? "background" : "mobile-background"}>
+            <video muted autoPlay loop webkit-playsinline="true" playsInline>
+              <source src={background.file.url} type="video/mp4" />
+            </video>
+          </div>
+        }
 
         <div className="cookies" style={{ position: "fixed", bottom: "8vh", display: "inline-flex", justifyContent: "center" }}>
           <CookieNotice
