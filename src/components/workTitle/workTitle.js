@@ -29,7 +29,7 @@ export default function WorkTitle(props) {
     const mobile = isBrowser() && window.screen.width < 720 ? true : false
     const marginClient = React.useMemo(() => randomNumber(0, 13), [])
     const marginTitle = React.useMemo(() => randomNumber(-6, 6), [])
-    const marginYear = React.useMemo(() => monitor ? randomNumber(3, 30) : randomNumber(3, 18), [])
+    const marginYear = React.useMemo(() => monitor ? randomNumber(1, 30) : randomNumber(1, 18), [])
     const marginMobile = React.useMemo(() => randomNumber(-40, 40), [])
 
 

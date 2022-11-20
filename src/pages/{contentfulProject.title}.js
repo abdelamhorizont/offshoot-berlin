@@ -22,13 +22,13 @@ import FullScreenIcon from '../assets/fullScreen.svg';
 import ExitFullScreenIcon from '../assets/exitFullScreen.svg';
 
 function videoUrl(url) {
-  if (url.includes('youtu')) {
+  if (url && url.includes('youtu')) {
     url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
     const id = (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
     return "https://www.youtube-nocookie.com/embed/" + id + "?showinfo=0&rel=0&showinfo=0&autohide=1&modestbranding=1&controls=1"
   }
 
-  if (url.includes('vimeo')) {
+  if (url && url.includes('vimeo')) {
     const id = /vimeo.*\/(\d+)/i.exec(url);
     if (id) {
       return 'https://player.vimeo.com/video/' + id[1]
@@ -193,7 +193,7 @@ const Post = ({ data }) => {
     <Layout>
       {/* <div className={project} > */}
       <div className={project} style={{ cursor: fullScreen && mouseMoved ? "auto" : fullScreen ? "none" : "auto" }}>
-        {
+        {videoSrc && 
           videoSrc.includes('vimeo') ?
             <div className={player} onMouseMove={handleMouseMove}>
               <FullScreen handle={handle}>
@@ -262,7 +262,6 @@ const Post = ({ data }) => {
             </>
 
         }
-
 
         <div className={text}>
           <div className={projectTeam}>
