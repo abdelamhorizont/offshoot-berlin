@@ -1,5 +1,5 @@
 import React from "react"
-// import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import { CookieNotice } from "gatsby-cookie-notice";
 
 import Layout from '../components/layout/layout'
@@ -12,11 +12,42 @@ import '../styles/typo.module.scss'
 import '../styles/cookies.module.scss'
 
 export default function Home({ location }) {
+  const data = useStaticQuery(graphql`
+  query {
+    allContentfulAsset(filter: {title: {eq: "background"}}) {
+      nodes {
+        title
+        file {
+          url
+          fileName
+          contentType
+        }
+      }
+    }
+  } 
+  `)
+
+  const [mobile, setMobile] = React.useState()
+
+  React.useEffect(() => {
+    const isBrowser = () => typeof window !== "undefined"
+     setMobile(isBrowser() && window.screen.width < 720)
+  }, []);
+
+
+  const background = data.allContentfulAsset.nodes[0]
+  console.log(mobile);
 
   return (
     <div>
       <Layout path={location.pathname}>
         <ProjectList />
+
+        <div className={!mobile? "background" : "mobile-background"}>
+          <video muted autoPlay loop webkit-playsinline="true" playsInline>
+            <source src={background.file.url} type="video/mp4" />
+          </video>
+        </div>
 
         <div className="cookies" style={{ position: "fixed", bottom: "8vh", display: "inline-flex", justifyContent: "center" }}>
           <CookieNotice

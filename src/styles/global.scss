@@ -33,6 +33,40 @@ html {
 
 }
 
+.background{
+    position: fixed;
+    display: flex;
+    align-items: center;
+
+    height: 100vh;
+
+    z-index : -1;
+    top: 0;
+
+    video{
+        width: 100vw;
+    }
+}
+
+.mobile-background{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100vw;
+
+    z-index : -1;
+    top: 0;
+
+    video{
+        width: 90vh;
+        transform: rotate(90deg);
+        transform-origin: 50% 50%;
+    }
+}
+
 .container {
     display        : inline-flex;
     justify-content: center;

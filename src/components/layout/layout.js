@@ -45,15 +45,7 @@ const Layout = (props) => {
                                                 <source src={logoFile.url} type="video/mp4" />
                                             </video>
                                             :
-                                            // logoFile.contentType == "image/svg+xml" ?
-                                                // <svg>
-                                                //     {logoFile.url}
-                                                // </svg>
-                                                // <object type="image/svg+xml" data= {logoFile.url}></object>
-                                                <img src={logoFile.url} alt="logo" />
-                                                // <LogoFile />
-                                                // :
-                                                // <img src={logoImg} alt="logo" />
+                                            <img src={logoFile.url} alt="logo" />
                                     }
                                 </Link></li>
                                 <li key="about"><Link to="/about">About</Link></li>
