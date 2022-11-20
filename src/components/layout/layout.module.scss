@@ -88,6 +88,10 @@ footer {
 
             transition: height 0.5s ease;
         }
+
+        svg{
+            color: white;
+        }
     }
 
     .logo {
@@ -102,6 +106,12 @@ footer {
             video {
                 height: 2rem;
             }
+        }
+
+        svg, img{
+            color: white;
+            height        : 1.1rem;
+
         }
     }
 
@@ -250,6 +260,9 @@ footer {
                 pointer-events: auto;
                 transition    : height 0.5s ease;
             }
+            img {
+                height: 1.4rem;
+            }
 
             &:hover {
                 video {
@@ -271,10 +284,6 @@ footer {
         ul {
             background-color: transparent;
 
-            ul.top {
-                // background-color: transparent;
-            }
-
             li {
                 font-size: $fontSize960S;
             }
@@ -290,6 +299,9 @@ footer {
                 video {
                     height: 1.2rem;
                 }
+                img {
+                    height: 1.4rem;
+                }
             }
 
             .animated-logo {
@@ -298,8 +310,10 @@ footer {
                     animation          : 0.5s ease 0.75s 1 scale;
                     animation-fill-mode: both;
                 }
+                img {
+                    height: 1.4rem;
+                }
             }
-
         }
     }
 }

@@ -4,7 +4,7 @@ import Div100vh from 'react-div-100vh'
 
 import { top, bottom, logo, animatedLogo, aboutLogo, ulWrapper } from './layout.module.scss'
 
-// import logoFile from '../../assets/logo rot.mp4'
+import LogoFile from '../../assets/offshoot_logo.svg'
 
 const Layout = (props) => {
     const data = useStaticQuery(graphql`
@@ -15,6 +15,7 @@ const Layout = (props) => {
               file {
                 url
                 fileName
+                contentType
               }
             }
           }
@@ -22,7 +23,7 @@ const Layout = (props) => {
     `)
 
     // const logoFile = data.allContentfulAsset.nodes[0].file.url
-    const logoFile = data.allContentfulAsset.nodes.filter(node => node.title == "logo")[0].file.url
+    const logoFile = data.allContentfulAsset.nodes.filter(node => node.title == "logo")[0].file
     const logoImg = data.allContentfulAsset.nodes.filter(node => node.title == "logoImage")[0].file.url
 
     const isBrowser = () => typeof window !== "undefined"
@@ -38,9 +39,22 @@ const Layout = (props) => {
                             <ul className={top}>
                                 <li key="contact"><Link to="/contact">Contact</Link></li>
                                 <li key="logo" className={pageName == "/" ? animatedLogo : logo}><Link to="/">
-                                    <video muted autoPlay loop webkit-playsinline="true" playsInline poster={logoImg}>
-                                        <source src={logoFile} type="video/mp4" />
-                                    </video>
+                                    {
+                                        logoFile.contentType == "video/mp4" ?
+                                            <video muted autoPlay loop webkit-playsinline="true" playsInline poster={logoImg}>
+                                                <source src={logoFile.url} type="video/mp4" />
+                                            </video>
+                                            :
+                                            // logoFile.contentType == "image/svg+xml" ?
+                                                // <svg>
+                                                //     {logoFile.url}
+                                                // </svg>
+                                                // <object type="image/svg+xml" data= {logoFile.url}></object>
+                                                <img src={logoFile.url} alt="logo" />
+                                                // <LogoFile />
+                                                // :
+                                                // <img src={logoImg} alt="logo" />
+                                    }
                                 </Link></li>
                                 <li key="about"><Link to="/about">About</Link></li>
                             </ul>
