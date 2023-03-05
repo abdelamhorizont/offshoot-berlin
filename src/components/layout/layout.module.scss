@@ -42,7 +42,7 @@ footer {
         position: fixed;
         z-index : 2;
 
-        // background-color: black;
+        background-color: transparent;
 
         width  : calc(100vw - 3rem);
         padding: 1.5rem;
@@ -161,7 +161,7 @@ footer {
             display            : flex;
             display            : -webkit-flex;
             justify-content    : center;
-            // background-color: black;
+            background-color: transparent;
 
             // top        : calc(100vh - 4.5rem);
             padding-top: 1.6rem;
@@ -195,8 +195,8 @@ footer {
 
             a {
                 background-color: black;
-                box-shadow      : 0px 0px 10px 12px rgba(0, 0, 0, 1);
-                text-shadow     : 0px 0px 50px rgba(0, 0, 0, 1);
+                // box-shadow      : 0px 0px 10px 12px rgba(0, 0, 0, 1);
+                // text-shadow     : 0px 0px 50px rgba(0, 0, 0, 1);
                 border-radius   : 8rem;
             }
 
@@ -223,7 +223,7 @@ footer {
 
                 height          : 1.2rem;
                 background-color: black;
-                // box-shadow: 0px 0px 10px 15px rgba(0, 0, 0, 0.9);
+                box-shadow: 0px 0px 10px 15px rgba(0, 0, 0, 0.9);
                 border-radius   : 8rem;
             }
 
@@ -289,10 +289,10 @@ footer {
             }
 
             a {
-                background-color: black;
-                box-shadow      : 0px 0px 10px 5px rgba(0, 0, 0, 0.9);
-                text-shadow     : 0px 0px 50px rgba(0, 0, 0, 0.7);
-                border-radius   : 8rem;
+                // background-color: black;
+                // box-shadow      : 0px 0px 10px 5px rgba(0, 0, 0, 0.9);
+                // text-shadow     : 0px 0px 50px rgba(0, 0, 0, 0.7);
+                // border-radius   : 8rem;
             }
 
             .logo {

@@ -39,6 +39,10 @@ query {
     React.useEffect(() => {
         const isBrowser = () => typeof window !== "undefined"
         isBrowser() && window.addEventListener('load', handleLoad())
+        window.addEventListener('popstate', function () {
+            setIsShown(false)
+            console.log('location changed!');
+        });
     }, []);
 
 
@@ -66,6 +70,9 @@ query {
                                     onMouseEnter={() => {
                                         setIndex(data.allContentfulProject.nodes.indexOf(node))
                                     }}
+                                    onClick={() => {
+                                        setIsShown(false)
+                                    }}
                                 >
                                     <WorkTitle marg={true} path={node} isShown={isShown} />
                                 </li>
@@ -75,7 +82,8 @@ query {
                 </ul>
 
                 {data.allContentfulProject.nodes[index].videoPreview &&
-                    <div key={index} style={{ marginRight: isShown ? "0rem" : "-25rem", maxHeight: videoHeight, width : videoWidth }} className={youtubeContainer}>
+                    // <div key={index} style={{ marginRight: isShown ? "0rem" : "0rem", maxHeight: "videoHeight", width : videoWidth }} className={youtubeContainer}>
+                    <div key={index} style={{ opacity: isShown ? "1" : "0"}} className={youtubeContainer}>
                         <video key={data.allContentfulProject.nodes[index].videoPreview.file.url} ref={videoContainer} muted autoPlay loop webkit-playsinline="true" playsInline>
                             <source src={data.allContentfulProject.nodes[index].videoPreview.file.url} type="video/mp4" />
                         </video>

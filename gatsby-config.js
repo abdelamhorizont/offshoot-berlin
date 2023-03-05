@@ -19,6 +19,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-netlify`,
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
