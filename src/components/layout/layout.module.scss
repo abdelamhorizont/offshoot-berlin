@@ -80,6 +80,7 @@ footer {
         margin-top         : -0.5rem;
         animation          : 0.5s ease 0.85s 1 slideInFromLeft;
         animation-fill-mode: both;
+        z-index: 100;
 
         video {
             // height             : 1.2rem;
@@ -96,6 +97,7 @@ footer {
 
     .logo {
         margin-top: -0.5rem;
+        z-index: 100;
 
         video {
             height        : 1.1rem;
@@ -193,38 +195,35 @@ footer {
                 line-height: 0rem;
             }
 
-            a {
-                background-color: black;
-                // box-shadow      : 0px 0px 10px 12px rgba(0, 0, 0, 1);
-                // text-shadow     : 0px 0px 50px rgba(0, 0, 0, 1);
-                border-radius   : 8rem;
-            }
-
         }
 
         .logo {
-            position           : fixed;
+            // position           : fixed;
             // background-color: black;
 
             top : 0rem;
             left: 0rem;
 
             width          : 100vw;
-            padding-top    : 1.5rem;
+            // padding-top    : 1.5rem;
             padding-bottom : 1.5rem;
             overflow       : hidden;
             display        : flex;
             justify-content: center;
 
-            pointer-events: none;
+            // pointer-events: none;
 
             video {
                 pointer-events: auto;
 
                 height          : 1.2rem;
-                background-color: black;
-                box-shadow: 0px 0px 10px 15px rgba(0, 0, 0, 0.9);
+                // background-color: black;
+                // box-shadow: 0px 0px 10px 15px rgba(0, 0, 0, 0.9);
                 border-radius   : 8rem;
+            }
+
+            img {
+                height: 1.4rem;
             }
 
             &:hover {
@@ -236,11 +235,11 @@ footer {
         }
 
         .animated-logo {
-            position        : fixed;
+            // position        : fixed;
             top             : 0rem;
             left            : 0rem;
-            width           : 100vw;
-            padding-top     : 1.5rem;
+            // width           : 100vw;
+            // padding-top     : 1.5rem;
             padding-bottom  : 0.5rem;
             overflow        : hidden;
             display         : flex;
@@ -250,7 +249,7 @@ footer {
 
             animation          : 0.5s ease 0.85s 1 slideInFromLeft;
             animation-fill-mode: both;
-            pointer-events     : none;
+            // pointer-events     : none;
 
             video {
                 height             : 1.2rem;

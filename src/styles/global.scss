@@ -36,6 +36,7 @@ html {
 .background{
     position: fixed;
     display: flex;
+    justify-content: center;
     align-items: center;
 
     height: 100vh;
@@ -45,7 +46,10 @@ html {
     top: 0;
 
     video{
-        width: 100vw;
+        // flex-shrink: 0;
+        // min-width: 100%;
+        // min-height: 100%
+        object-fit: cover;
     }
 }
 
@@ -62,7 +66,7 @@ html {
     top: 0;
 
     video{
-        width: 90vh;
+        width: 100vh;
         transform: rotate(90deg);
         transform-origin: 50% 50%;
     }

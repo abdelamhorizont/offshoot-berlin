@@ -8,12 +8,26 @@
    justify-content: flex-end;
 
    margin: 1rem;
+   background-color: transparent;
 
    * {
-      width         : 90%;
+      // width         : 90%;
       font-size     : $fontSizeM;
       text-transform: lowercase;
       text-align    : left;
+      background-color: transparent;
+   }
+
+   p{
+      // word-wrap:break-word;
+      // white-space: pre-wrap;
+      width          : calc(100vw - 2rem);
+      margin-bottom: 1rem;
+   }
+
+   div{
+      background-color: transparent;
+      width          : calc(100vw - 2rem);
    }
 
 }
@@ -57,7 +71,11 @@
       text-transform: lowercase;
       text-align    : left;
    }
-
+   div{
+      p{
+         margin-bottom: 1rem;
+      }
+   }
 }
 
 @media screen and (max-width: 620px) {

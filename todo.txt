@@ -1,13 +1,7 @@
-- video controls:
-   x video on mobile
-   x play when click on video
-   - smooth transition
-   x fullscreen: visible on mousemove
-   - fullScreen hide cursor
-   x keyboard controls
-- video sometimes visible on lamding page
-- Korrekturen 
-   x workTitle hover random Margin
-x team random margin mobile   
-x videogröße nach reload
-- safari freeze
+mobile:
+x logo click
+x video crop
+
+agb, imprint:
+x absätze
+x hg-farbe
