@@ -1,7 +1,2 @@
 mobile:
-x logo click
-x video crop
-
-agb, imprint:
-x absätze
-x hg-farbe
+x fullscreen
