@@ -64,11 +64,14 @@ html {
 
     z-index : -1;
     top: 0;
+    left: 0;
 
     video{
         width: 100vh;
         transform: rotate(90deg);
         transform-origin: 50% 50%;
+        object-fit: cover;
+
     }
 }
 
