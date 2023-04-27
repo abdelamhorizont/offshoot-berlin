@@ -68,9 +68,16 @@ html {
 
     video{
         width: 100vh;
+        // min-width: 100%; 
+        // min-height: 100%; 
+      
+        /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+        width: auto;
+        height: auto;     
+        object-fit: cover;
+
         transform: rotate(90deg);
         transform-origin: 50% 50%;
-        object-fit: cover;
 
     }
 }

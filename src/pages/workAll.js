@@ -35,8 +35,8 @@ export default function WorkAll() {
   return (
     <Layout>
       <div className={workContainer}>
-        <div className={work}>
-          <ul style={{marginTop: "00vh", marginBottom: "10vh"}}>
+        <div className={work} style={{marginTop: "10vh"}}>
+          <ul>
             {
               data.allContentfulProject.nodes.map(node => (
                 <Link to={`/${_.kebabCase(node.title)}`}>
