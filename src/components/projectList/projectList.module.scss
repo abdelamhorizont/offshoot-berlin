@@ -9,11 +9,12 @@
       height     : 90vh;
       width      : calc(100vw - 2rem);
       display    : flex;
-      align-items: center;
+      // align-items: center;
       // overflow   : hidden;
 
       .work {
-         margin-top: -3rem;
+         margin-top: 15vh;
+         margin-bottom: 15vh;
          display   : flex;
          // overflow  : hidden;
 
@@ -84,16 +85,9 @@
             width         : 100vw;
             pointer-events: none;
 
-            video{
-               min-width: 100%; 
-               min-height: 100%; 
-             
-               /* Setting width & height to auto prevents the browser from stretching or squishing the video */
-               width: auto;
-               height: auto;           
-                // object-fit: cover;
+            video{       
+                object-fit: cover;
            }
-
          }
       }
    }
@@ -152,6 +146,7 @@
 
          .youtube-container {
             // overflow      : hidden;
+            
             pointer-events: none;
             width: 100vw;
             height: 100vh;

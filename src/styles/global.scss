@@ -138,6 +138,24 @@ html {
             font-size: $fontSize1400S;
         }
     }
+
+    .background{    
+        height: 100vh;
+        width: 100vw;
+    
+        z-index : -5;
+        top: 0;
+    
+        video{
+            min-width: 100%; 
+            min-height: 100%; 
+          
+            /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+            width: auto;
+            height: auto;           
+             object-fit: cover;
+        }
+    }
 }
 
 @media screen and (min-width: 2000px) {
