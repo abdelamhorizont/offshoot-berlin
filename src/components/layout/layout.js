@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Div100vh from 'react-div-100vh'
 
-import { top, bottom, logo, animatedLogo, aboutLogo, ulWrapper } from './layout.module.scss'
+import { top, bottom, logo, animatedLogo, aboutLogo, ulWrapper, wrapper, header, footer } from './layout.module.scss'
 
 import LogoFile from '../../assets/offshoot_logo.svg'
 
@@ -32,8 +32,8 @@ const Layout = (props) => {
 
     return (
         <Div100vh>
-            <div>
-                <header>
+            <div className={wrapper}>
+                <header className={header}>
                     <nav>
                         <div className={ulWrapper}>
                             <ul className={top}>
@@ -58,7 +58,7 @@ const Layout = (props) => {
                     {props.children}
                 </main>
 
-                <footer>
+                <footer className={footer}>
                     <ul className={bottom}>
                         <li key="archive"><Link to="/workAll">Archive</Link></li>
                         <li key="imprint"><Link to="/imprint">Imprint</Link></li>

@@ -24,7 +24,7 @@ export default function About({location}) {
 
   return (
     <Layout>
-      <div className={about} >
+      <div className={about}>
         <div dangerouslySetInnerHTML={{ __html: text && text.childMarkdownRemark.html }} />
       </div>
     </Layout>
