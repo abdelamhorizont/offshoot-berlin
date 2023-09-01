@@ -266,7 +266,7 @@
       display              : grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows   : unset;
-      font-size            : $fontSize960M;
+      // font-size            : $fontSize960M;
       padding: 0rem 0.0rem;
 
       .project-text {
@@ -315,7 +315,7 @@
 
   .project {
     .text {
-      font-size: $fontSize1400M;
+      // font-size: $fontSize1400M;
     }
 
     iframe {
@@ -338,7 +338,7 @@
     }
 
     .text {
-      font-size: $fontSize2000M;
+      // font-size: $fontSize2000M;
 
 
       p {
