@@ -55,12 +55,7 @@ query {
     return (
         <div className={workContainer}>
             <div className={work}
-                onMouseEnter={() => {
-                    setIsShown(true)
-                    setVideoHeight(ulContainer.current.offsetHeight + "px")
-                    setVideoWidth(videoContainer.current.offsetWidth + "px")
-                }}
-                onMouseLeave={() => setIsShown(false)}
+                
             >
                 <ul ref={ulContainer} >
                     {
@@ -69,7 +64,12 @@ query {
                                 <li key={node.title}
                                     onMouseEnter={() => {
                                         setIndex(data.allContentfulProject.nodes.indexOf(node))
+                                        setIsShown(true)
+                                        setVideoHeight(ulContainer.current.offsetHeight + "px")
+                                        setVideoWidth(videoContainer.current.offsetWidth + "px")
                                     }}
+                                    onMouseLeave={() => setIsShown(false)}
+                                    
                                     onClick={() => {
                                         setIsShown(false)
                                     }}
