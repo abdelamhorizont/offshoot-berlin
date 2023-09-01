@@ -54,19 +54,19 @@ query {
 
     return (
         <div className={workContainer}>
-            <div className={work}
-                
-            >
+            <div className={work}>
                 <ul ref={ulContainer} >
                     {
                         data.allContentfulProject.nodes.map(node => (
                             <Link to={`/${_.kebabCase(node.title)}`}>
                                 <li key={node.title}
                                     onMouseEnter={() => {
-                                        setIndex(data.allContentfulProject.nodes.indexOf(node))
-                                        setIsShown(true)
-                                        setVideoHeight(ulContainer.current.offsetHeight + "px")
-                                        setVideoWidth(videoContainer.current.offsetWidth + "px")
+                                        if(node.videoPreview) {
+                                            setIndex(data.allContentfulProject.nodes.indexOf(node))
+                                            setIsShown(true)
+                                            setVideoHeight(ulContainer.current.offsetHeight + "px")
+                                            setVideoWidth(videoContainer.current.offsetWidth + "px")
+                                        }
                                     }}
                                     onMouseLeave={() => setIsShown(false)}
                                     
