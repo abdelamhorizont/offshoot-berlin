@@ -131,6 +131,13 @@
    }
 }
 
+@media screen and (max-width: 620px) { 
+   .work {
+      align-items: flex-start;
+      height: auto;
+  }
+}
+
 @media screen and (min-width: 1400px) {
    .work {
       // ul {
