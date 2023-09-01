@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/layout/layout'
 
-import { agb } from '../styles/about.module.scss'
+import { imprint } from '../styles/about.module.scss'
 
 export default function Imprint() {
 
@@ -25,7 +25,7 @@ export default function Imprint() {
 
   return (
     <Layout>
-      <div className={agb} >
+      <div className={imprint} >
         <div dangerouslySetInnerHTML={{ __html: text && text.childMarkdownRemark.html }} />
       </div>
     </Layout>

@@ -60,7 +60,8 @@ footer {
 
             &:hover {
                 // margin: 0.5rem 0rem;
-                font-style: italic;
+                font-variation-settings: "ital" 900;
+                // font-variation-settings: 'ital' 10;
             }
         }
 
@@ -146,7 +147,6 @@ footer {
         // z-index: 2;
     }
 }
-
 
 @media screen and (max-width: 620px) {
 
@@ -410,4 +410,31 @@ footer {
         }
     }
 
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .header,
+    .footer {
+        position: fixed;
+        // height: 3rem;
+        left: 0;
+        right: 0;
+        z-index: 100;
+    }
+
+    .header {
+        top: 0;
+    }
+
+    .footer {
+        bottom: 0;
+    }
+
+    main {
+        height: 100%;
+    }
 }

@@ -11,7 +11,7 @@ import { work, workContainer, youtubeContainer } from './projectList.module.scss
 export default function ProjectList() {
     const data = useStaticQuery(graphql`
 query {
-    allContentfulProject(filter: {category: {eq: "selected projects"}}) {
+    allContentfulProject(filter: {category: {ne: "hidden"}}) {
         nodes {
           id
           title
@@ -67,9 +67,9 @@ query {
                                             setVideoHeight(ulContainer.current.offsetHeight + "px")
                                             setVideoWidth(videoContainer.current.offsetWidth + "px")
                                         }
+                                        
                                     }}
                                     onMouseLeave={() => setIsShown(false)}
-                                    
                                     onClick={() => {
                                         setIsShown(false)
                                     }}
@@ -80,15 +80,17 @@ query {
                         ))
                     }
                 </ul>
+
+                {data.allContentfulProject.nodes[index].videoPreview &&
+                    // <div key={index} style={{ marginRight: isShown ? "0rem" : "0rem", maxHeight: "videoHeight", width : videoWidth }} className={youtubeContainer}>
+                    <div key={index} style={{ opacity: isShown ? "1" : "0"}} className={youtubeContainer}>
+                        <video key={data.allContentfulProject.nodes[index].videoPreview.file.url} ref={videoContainer} muted autoPlay loop webkit-playsinline="true" playsInline>
+                            <source src={data.allContentfulProject.nodes[index].videoPreview.file.url} type="video/mp4" />
+                        </video>
+                    </div>
+                 }
+
             </div>
-            {data.allContentfulProject.nodes[index].videoPreview &&
-                // <div key={index} style={{ marginRight: isShown ? "0rem" : "0rem", maxHeight: "videoHeight", width : videoWidth }} className={youtubeContainer}>
-                <div key={index} style={{ opacity: isShown ? "1" : "0"}} className={youtubeContainer}>
-                    <video key={data.allContentfulProject.nodes[index].videoPreview.file.url} ref={videoContainer} muted autoPlay loop webkit-playsinline="true" playsInline>
-                        <source src={data.allContentfulProject.nodes[index].videoPreview.file.url} type="video/mp4" />
-                    </video>
-                </div>
-                }
         </div>
     )
 }
