@@ -60,7 +60,8 @@ footer {
 
             &:hover {
                 // margin: 0.5rem 0rem;
-                font-style: italic;
+                font-variation-settings: "ital" 2000;
+                // font-variation-settings: 'ital' 10;
             }
         }
 

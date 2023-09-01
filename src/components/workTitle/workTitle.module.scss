@@ -17,6 +17,7 @@
 
     width    : calc(100vw - 2rem);
     font-size: $fontSizeM;
+    transition: all .2s ease;
 
     * {
         margin    : 0rem 0.2rem;
@@ -26,7 +27,8 @@
     &:hover {
 
         * {
-            font-style: italic;
+            // font-style: italic;
+            font-variation-settings: "ital" 2000;
         }
     }
 }
@@ -43,6 +45,7 @@
 
     width    : calc(100vw - 2rem);
     font-size: $fontSizeM;
+    transition: all .2s ease;
 
     opacity: 0;
     
@@ -55,7 +58,8 @@
     &:hover {
         
         * {
-            font-style: italic;
+            // font-style: italic;
+            font-variation-settings: "ital" 2000;
         }
     }
 

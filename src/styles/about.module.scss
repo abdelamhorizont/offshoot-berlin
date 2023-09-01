@@ -37,6 +37,10 @@
          margin-top: 1.5rem;
       }
 
+      table th {
+         font-weight: inherit;
+      }
+
       table:nth-child(2),
       table:nth-child(3) {
          align-self: flex-end;

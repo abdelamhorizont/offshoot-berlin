@@ -34,7 +34,9 @@ html{
        border-radius: 0.8rem;
 
        &:hover{
-           font-style: italic;
+        //    font-style: italic;
+           font-variation-settings: "ital" 2000;
+
        }   
    }
 

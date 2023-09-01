@@ -1,9 +1,16 @@
 @import "./typo.module.scss";
 
+// @font-face {
+//     font-family: "PPNeueMontreal";
+//     src        : url('../assets/PPNeueMontreal-Regular.woff');
+//     // src: url('../assets/PPNeueMontreal-Italic.woff');
+// }
+
 @font-face {
     font-family: "PPNeueMontreal";
-    src        : url('../assets/PPNeueMontreal-Regular.woff');
-    // src: url('../assets/PPNeueMontreal-Italic.woff');
+    src: url("../assets/PPNeueMontreal-Variable.woff2") format("woff2-variations");
+    font-weight: 200 800;
+    // font-style: normal;
 }
 
 @keyframes opa {
@@ -31,6 +38,10 @@ html {
         justify-content: center;
     }
 
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
 }
 
 .background{
@@ -109,7 +120,8 @@ html {
         font-size: $fontSizeS;
 
         &:hover {
-            font-style: italic;
+            // font-style: italic;
+            font-variation-settings: "ital" 2000;
         }
     }
 
